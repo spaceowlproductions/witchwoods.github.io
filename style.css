@@ -1,0 +1,163 @@
+#trees0
+{
+    image-rendering:optimizeQuality;
+    width: 100%;
+    filter: blur(0px);
+    z-index: 0;
+}
+
+#trees1
+{
+    image-rendering:optimizeQuality;
+    width: 100%;
+    filter: blur(0px);
+    z-index: 1;
+
+
+}
+
+#trees2
+{
+    image-rendering:optimizeQuality;
+    width: 100%;
+    filter: blur(0px);
+    z-index: 2;
+}
+
+#colorAdd
+{
+    display: block;
+    position: absolute;
+
+    min-width: 1000px;
+    min-height: 1000px;
+
+    top: 50%;
+    left: 0%;    
+    transform: translate(0%, -50%);
+
+
+    background-color: rgb(36, 133, 91);
+    mix-blend-mode: darken;
+    z-index: 99;
+}
+
+.container 
+{
+    display: block;
+    transform: translate(0%,0%);
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    position: relative;
+}
+  
+#center0
+{
+    display: block;
+    padding: px;
+    position: absolute;
+    top: 50%;
+    left: 0%;    
+    transform: translate(0%, -50%);
+    text-align: center;
+}
+
+#center1
+{
+    display: block;
+    padding: px;
+    position: absolute;
+    top: 50%;
+    left: 0%;    
+    transform: translate(0%, -50%);
+    text-align: center;
+}
+
+#center2
+{
+    display: block;
+    padding: px;
+    position: absolute;
+    top: 50%;
+    left: 0%;    
+    transform: translate(0%, -50%);
+    text-align: center;
+}
+
+#canopy
+{
+    height: 100%;
+    top: 0%;
+    position: absolute;
+    z-index: 98;
+}
+
+#canopyBack
+{
+    display: block;
+    padding: px;
+    position: absolute;
+    top: 4%;
+    left: 0%;    
+    text-align: center;
+
+    filter: brightness(.3);
+    transform: scaleX(-1);
+
+    width: 120%;
+
+    z-index: 97;
+}
+
+#popupWindow
+{
+    margin: 1% 30%;
+    border: 3px solid rgb(9, 40, 6);
+    background-color: rgba(9, 40, 6, 0.484);
+
+    word-wrap: break-word;
+    word-break: break-word;
+
+    transform: translate(0%, 150%);
+    position: relative;
+
+    z-index: 100;
+
+    font-family:Tahoma, sans-serif;
+
+    visibility: hidden;
+}
+
+h3
+{
+    text-align: center;
+    text-overflow: normal;
+    padding: 10px 0;
+    color: aliceblue;
+}
+
+p
+{
+    text-overflow: normal;
+    padding: 20px 30px;
+    color: aliceblue;
+}
+
+
+
+html, body {
+    overflow: hidden;
+}
+
+html {
+    display: table;
+    margin: auto;
+    background-color: black;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
