@@ -3,8 +3,14 @@ var z = 0;
 var scrollAmount = 0;
 var pauseScroll = false;
 var pickupHappaned;
+var spawnHut;
+var hutSpawned;
 
 var pickupNumber = getRandomArbitrary(500,1200);
+var hutNumber = getRandomArbitrary(500,1200);
+console.log("hut number = " + hutNumber);
+
+var hut;
 
 class ScrollObject
 {
@@ -21,49 +27,66 @@ class ScrollObject
 
     Scroll()
     {
+        const image = document.getElementById("trees" + this.index);
+        const posElement =  document.getElementById("center" + this.index);
+
         //console.log("Hey from " + this.index + " with " + this.scale, this.opacity, this.blurValue, this.fade, this.resetScale);
         if(this.scale > 0)
         {
             this.scale -= .7;
             this.opacity += .005;
-    
-            document.getElementById("center" + this.index).style.padding = this.scale + "px";
-            document.getElementById("trees" + this.index).style.filter = "brightness(" + this.opacity + ")";
+
+            posElement.style.padding = this.scale + "px";
+            image.style.filter = "brightness(" + this.opacity + ")";
+
+            if(this.scale < 100 && image.getAttribute("src") == "art/hut.png")
+            {
+                pauseScroll = true;
+                console.log("at hut");
+            }
     
             if(this.scale < 50)
             {
                 this.blurValue += .6;
                 this.fade -= .5;
-                document.getElementById("trees" + this.index).style.filter = "brightness(" + this.fade + ")";
-                document.getElementById("trees" + this.index).style.filter = "blur(" + this.blurValue + "px)";
+                image.style.filter = "brightness(" + this.fade + ")";
+                image.style.filter = "blur(" + this.blurValue + "px)";
 
             }
         }
         else
         {
-            console.log(z);
             this.scale = this.resetScale;
             this.opacity = 0;
 
             this.blurValue = 0;
             this.fade = 1;
 
-            document.getElementById("center" + this.index).style.padding = this.resetScale + "px";
+            posElement.style.padding = this.resetScale + "px";
 
-            document.getElementById("trees" + this.index).style.filter = "blur(" + this.blurValue + "px)";
+            image.style.filter = "blur(" + this.blurValue + "px)";
 
-            document.getElementById("trees" + this.index).style.filter = "brightness(" + this.opacity + ")";
+            image.style.filter = "brightness(" + this.opacity + ")";
 
             var randNum = Math.floor(Math.random() * 75);
 
             var coinFlip = Math.floor(Math.random() * 2);
             if(coinFlip == 1) {randNum = randNum * -1};
 
-            document.getElementById("trees" + this.index).style.transform = "translate(" + randNum + "px)";
+            image.style.transform = "translate(" + randNum + "px)";
 
             z = z - 1;
-            document.getElementById("center" + this.index).style.zIndex = z;
-            console.log(document.getElementById("trees" + this.index).style.zIndex);
+            posElement.style.zIndex = z;
+            image.style.zIndex = z;
+
+            if(spawnHut)
+            {
+                image.src="art/hut.png";
+                image.style.transform = "translate(" + -randNum + "px)";
+                hutSpawned = true;
+                hut = image;                  
+            }
+
 
         }
     }
@@ -81,25 +104,32 @@ window.addEventListener('wheel', function (event) {
         {
             trees.forEach(element => element.Scroll());
 
-            if(!pickupHappaned)
+            scrollAmount += 1;
+            console.log(scrollAmount);
+
+            if(pickupNumber < scrollAmount && !pickupHappaned)
             {
-                scrollAmount += 1;
+                var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
+                console.log(randomItem);
+    
+                //document.getElementById("popupName").textContent = grimoireRaw[randomItem].name;
+                document.getElementById("popupInfo").textContent = pickupItem(randomItem);
+    
+                console.log("pickup");
+                document.getElementById("popupWindow").style.visibility = "visible";
+                pickupNumber = 0;
+                pickupHappaned = true;
+                pauseScroll = true;
             }
+    
+            if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
+            {
+                spawnHut = true;
+            }
+    
+    
         }
 
-        if(pickupNumber < scrollAmount && !pickupHappaned)
-        {
-            var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
-            console.log(randomItem);
-
-            document.getElementById("popupName").textContent = grimoireRaw[randomItem].name;
-            document.getElementById("popupInfo").textContent = grimoireRaw[randomItem].description;
-
-            console.log("pickup");
-            document.getElementById("popupWindow").style.visibility = "visible";
-            pickupHappaned = true;
-            pauseScroll = true;
-        }
     }
 });
   
@@ -110,8 +140,12 @@ window.addEventListener('click', function(event)
         document.getElementById("popupWindow").style.visibility = "hidden";
         pauseScroll = false;    
     }
-});
-  
+
+    if(hutSpawned && pauseScroll)
+    {
+        console.log("knock!");
+    }
+});  
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;

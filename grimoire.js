@@ -128,4 +128,7 @@ const grimoireRaw = [
     }
 ];
 
-console.log(grimoireRaw[4]);
+function pickupItem(itemNum)
+{
+    return "You find " + grimoireRaw[itemNum].description + ". You take it and put it in your basket to bring to the witch in the woods.";
+}
