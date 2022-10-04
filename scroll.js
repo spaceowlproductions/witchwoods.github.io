@@ -89,6 +89,12 @@ window.addEventListener('wheel', function (event) {
 
         if(pickupNumber < scrollAmount && !pickupHappaned)
         {
+            var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
+            console.log(randomItem);
+
+            document.getElementById("popupName").textContent = grimoireRaw[randomItem].name;
+            document.getElementById("popupInfo").textContent = grimoireRaw[randomItem].description;
+
             console.log("pickup");
             document.getElementById("popupWindow").style.visibility = "visible";
             pickupHappaned = true;

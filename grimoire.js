@@ -1,4 +1,4 @@
-[
+const grimoireRaw = [
     {
         "name": "Aconite",
         "description": "a stem of leaves with lovely deep purple blossoms",
@@ -126,4 +126,6 @@
         "touchPoison": false,
         "uses": [ "render the possessor invisible to onlookers" ]
     }
-]
+];
+
+console.log(grimoireRaw[4]);
