@@ -128,7 +128,7 @@ const grimoireRaw = [
     }
 ];
 
-const itemPicked = null;
+var itemPicked = null;
 
 function pickupItem(itemNum)
 {
