@@ -128,7 +128,16 @@ const grimoireRaw = [
     }
 ];
 
+const itemPicked = null;
+
 function pickupItem(itemNum)
 {
-    return "You find " + grimoireRaw[itemNum].description + ". You take it and put it in your basket to bring to the witch in the woods.";
+    itemPicked = grimoireRaw[itemNum];
+    return "You find " + itemPicked.description + ". You take it and put it in your basket to bring to the witch in the woods.";
+}
+
+
+function witchAnswer()
+{
+    return "The witch opens the door. They look at you and glance down at your basket.  Ah, I see you found some " + itemPicked.name + "... " + itemPicked.bioName + "..."; 
 }

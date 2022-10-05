@@ -143,6 +143,8 @@ window.addEventListener('click', function(event)
 
     if(hutSpawned && pauseScroll)
     {
+        document.getElementById("popupInfo").textContent = witchAnswer();
+        document.getElementById("popupWindow").style.visibility = "visible";
         console.log("knock!");
     }
 });  
