@@ -12,6 +12,12 @@ console.log("hut number = " + hutNumber);
 
 var hut;
 
+var witchActive;
+
+class WitchPhase
+{
+    state = {ID, AltName,};
+}
 class ScrollObject
 {
     constructor(index, scale, opacity, blurValue, fade)
@@ -84,7 +90,7 @@ class ScrollObject
                 image.src="art/hut.png";
                 image.style.transform = "translate(" + -randNum + "px)";
                 hutSpawned = true;
-                hut = image;                  
+                hut = image;   
             }
 
 
@@ -112,10 +118,8 @@ window.addEventListener('wheel', function (event) {
                 var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
                 console.log(randomItem);
     
-                //document.getElementById("popupName").textContent = grimoireRaw[randomItem].name;
-                document.getElementById("popupInfo").textContent = pickupItem(randomItem);
-    
                 console.log("pickup");
+                this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
                 document.getElementById("popupWindow").style.visibility = "visible";
                 pickupNumber = 0;
                 pickupHappaned = true;
@@ -137,15 +141,23 @@ window.addEventListener('click', function(event)
 {
     if(document.getElementById("popupWindow").style.visibility == "visible")
     {
-        document.getElementById("popupWindow").style.visibility = "hidden";
-        pauseScroll = false;    
+        if(witchActive)
+        {
+            document.getElementById("popupInfo").textContent = witch.act();
+        }
+        else
+        {
+            document.getElementById("popupWindow").style.visibility = "hidden";
+            pauseScroll = false;        
+        }
     }
 
-    if(hutSpawned && pauseScroll)
+    if(hutSpawned && pauseScroll && !witchActive)
     {
-        document.getElementById("popupInfo").textContent = witchAnswer();
+        document.getElementById("popupInfo").textContent = witch.act();
         document.getElementById("popupWindow").style.visibility = "visible";
         console.log("knock!");
+        witchActive = true;
     }
 });  
 

@@ -55,7 +55,6 @@ const grimoireRaw = [
     {
         "name": "Lemon Balm",
         "description": "a sprig of sweet smelling mint-shaped leaves",
-        "altNames": [],
         "bioName": "Melissa officinalis",
         "eatPoison": false,
         "touchPoison": false,
@@ -133,11 +132,6 @@ var itemPicked = null;
 function pickupItem(itemNum)
 {
     itemPicked = grimoireRaw[itemNum];
-    return "You find " + itemPicked.description + ". You take it and put it in your basket to bring to the witch in the woods.";
-}
-
-
-function witchAnswer()
-{
-    return "The witch opens the door. They look at you and glance down at your basket.  Ah, I see you found some " + itemPicked.name + "... " + itemPicked.bioName + "..."; 
+    setupWitch(itemPicked);
+    return "You find " + itemPicked.description + ", and place it in your basket to present to the witch in the woods.";
 }
