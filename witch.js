@@ -72,14 +72,93 @@ var Describe = function(witch)
 
     this.act = function()
     {
+        var message = null;
+        if(item.uses.length > 1)
+        {
+            message = "It can be used to " + item.uses[0];
 
+            for(i = 1; i < item.uses.length; i++)
+            {
+                message += ", and to " + item.uses[i];
+
+                if(i == item.uses.length - 1)
+                    message += ". ";
+            }
+        }
+
+        this.next();
+        return message;
     }
 
     this.next = function()
     {
-
+        this.next = function()
+        {
+            witch.changeState(new Warn(witch));
+        }    
     }
 }
+
+var Warn = function(witch)
+{
+    this.witch = witch;
+
+    this.act = function()
+    {
+        var message = null;
+        if(item.eatPoison)
+        {
+            message += "One shouldn't ingest this, lest they wish to be poisoned. ";
+        }
+        if(item.touchPoison)
+        {
+            message += "The witch glances down at your hands, you should be wearing gloves to handle this. ";
+        }
+        if(item.conditionalPoison)
+        {
+            message += "It can bring an ill fate " + item.conditionalPoison + ". ";
+        }
+
+        this.next();
+        if(message != null)
+            return message;
+        else
+            return witch.act();
+    }
+
+    this.next = function()
+    {
+        witch.changeState(new Goodbye(witch));
+    }
+}
+
+var Goodbye = function(witch)
+{
+    this.witch = witch;
+
+    this.act = function()
+    {
+        this.next();
+        return "The witch looks at you as if they have nothing much left to say.  They shut the door leaving you with the quiet sounds of the surrounding wood. ";
+    }
+
+    this.next = function()
+    {
+        witch.changeState(new Done(witch));
+    }
+}
+
+var Done = function(witch)
+{
+    this.witch = witch;
+
+    this.act = function()
+    {
+        return "done";
+    }
+}
+
+
 
 var setupWitch = function(item)
 {

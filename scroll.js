@@ -13,6 +13,7 @@ console.log("hut number = " + hutNumber);
 var hut;
 
 var witchActive;
+var witchDone;
 
 class WitchPhase
 {
@@ -143,7 +144,17 @@ window.addEventListener('click', function(event)
     {
         if(witchActive)
         {
-            document.getElementById("popupInfo").textContent = witch.act();
+            var newText = witch.act();
+            if(newText == null)
+                newText = witch.act();
+            
+            if(newText == "done")
+            {
+                document.getElementById("popupWindow").style.visibility = "hidden";
+                witchDone = true;
+            }
+
+            document.getElementById("popupInfo").textContent = newText;
         }
         else
         {
@@ -152,7 +163,7 @@ window.addEventListener('click', function(event)
         }
     }
 
-    if(hutSpawned && pauseScroll && !witchActive)
+    if(hutSpawned && pauseScroll && !witchActive && !witchDone)
     {
         document.getElementById("popupInfo").textContent = witch.act();
         document.getElementById("popupWindow").style.visibility = "visible";
