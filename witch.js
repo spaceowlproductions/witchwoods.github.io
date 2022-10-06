@@ -49,7 +49,7 @@ var AltNames = function(witch)
 
         if(item.altNames != null)
         {
-            var alt = getRandomArbitrary(0, item.altNames.length - 1);
+            var alt = Math.floor(getRandomArbitrary(0, item.altNames.length - 1));
             message = "Some people call it " + item.altNames[alt] + ".";
             return message;
         }
@@ -92,10 +92,7 @@ var Describe = function(witch)
 
     this.next = function()
     {
-        this.next = function()
-        {
-            witch.changeState(new Warn(witch));
-        }    
+        witch.changeState(new Warn(witch));
     }
 }
 

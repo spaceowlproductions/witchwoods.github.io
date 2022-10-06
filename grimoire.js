@@ -91,7 +91,7 @@ const grimoireRaw = [
         "eatPoison": false,
         "touchPoison": false,
         "conditionalPoison": "if picked after the 10th of October, as that is the day that the Devil roams the country and spits on every bramble, causing the unsuspecting gatherer to become ill and die when eaten",
-        "uses": [ "cure many illnesses if a human or cattle pass under an arch of its brambles, though this often took several passes through the arch to cure whooping cough", "prevent whooping cough if the bush's brambles are fashioned into a cross and worn" ]
+        "uses": [ "cure many illnesses if humans or cattle pass under an arch of its brambles, though this often takes several passes through the arch to cure whooping cough", "prevent whooping cough if the bush's brambles are fashioned into a cross and worn" ]
     },
     {
         "name": "Broom",
@@ -100,7 +100,7 @@ const grimoireRaw = [
         "altNames": [ "Genista" ],
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "scourge yourself if you are a penitent (whip yourself for God's forgiveness", "rid your home of its head of house, if used to sweep its floor when in blossom in May", "aid as an ingredient in medicines", "bring good luck and abundance if used as a decoration" ]
+        "uses": [ "scourge yourself if you are a penitent (whip yourself for God's forgiveness)", "rid your home of its head of house, if used to sweep its floor when in blossom in May", "aid as an ingredient in medicines", "bring good luck and abundance if used as a decoration" ]
     },
     {
         "name": "Cabbage",
