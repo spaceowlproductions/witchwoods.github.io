@@ -121,34 +121,7 @@ const trees = [trees1, trees2, trees3];
 
 window.addEventListener('wheel', function (event) {
     if (event.deltaY > 0) {
-        if(!pauseScroll)
-        {
-            trees.forEach(element => element.Scroll());
-
-            scrollAmount += 1;
-            console.log(scrollAmount);
-
-            if(pickupNumber < scrollAmount && !pickupHappaned)
-            {
-                var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
-                console.log(randomItem);
-    
-                console.log("pickup");
-                this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
-                document.getElementById("popupWindow").style.visibility = "visible";
-                pickupNumber = 0;
-                pickupHappaned = true;
-                pauseScroll = true;
-            }
-    
-            if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
-            {
-                spawnHut = true;
-            }
-    
-    
-        }
-
+        tryScroll();
     }
 });
   
@@ -186,7 +159,58 @@ window.addEventListener('click', function(event)
     }
 });  
 
-document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+document.addEventListener('touchstart', function(e){ e.preventDefault(); });
+
+document.addEventListener('keydown', function(event) {
+
+    switch (event.key) {
+        case "ArrowUp":
+            console.log("keyUP");
+            // Up pressed
+            tryScroll();
+            break;
+    }    
+});
+
+document.addEventListener("drag", function(event) {
+    if(event.deltaY > 0)
+    {
+        tryScroll();
+    }
+  });  
+
+
+
+function tryScroll()
+{
+    if(!pauseScroll)
+    {
+        trees.forEach(element => element.Scroll());
+
+        scrollAmount += 1;
+        console.log(scrollAmount);
+
+        if(pickupNumber < scrollAmount && !pickupHappaned)
+        {
+            var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
+            console.log(randomItem);
+
+            console.log("pickup");
+            this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
+            document.getElementById("popupWindow").style.visibility = "visible";
+            pickupNumber = 0;
+            pickupHappaned = true;
+            pauseScroll = true;
+        }
+
+        if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
+        {
+            spawnHut = true;
+        }
+
+
+    }
+}
 
 
 function getRandomArbitrary(min, max) {
