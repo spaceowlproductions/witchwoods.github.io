@@ -115,13 +115,13 @@
 #popupWindow
 {
     margin: 1% 30%;
-    border: 3px solid rgb(9, 40, 6);
-    background-color: rgba(9, 40, 6, 0.484);
+    border: 3px solid rgb(34, 6, 40);
+    background-color: rgba(34, 6, 40, 0.784);
 
     word-wrap: break-word;
     word-break: break-word;
 
-    transform: translate(0%, 150%);
+    transform: translate(0%, 20px);
     position: relative;
 
     z-index: 100;
@@ -129,7 +129,31 @@
     font-family:Tahoma, sans-serif;
 
     visibility: hidden;
+
+    min-width: 400px;
 }
+
+#startWindow
+{
+    margin: 1% 30%;
+    border: 3px solid rgb(34, 6, 40);
+    background-color: rgba(34, 6, 40, 0.784);
+
+    word-wrap: break-word;
+    word-break: break-word;
+
+    transform: translate(0%, 20px);
+    position: relative;
+
+    z-index: 100;
+
+    font-family:Tahoma, sans-serif;
+
+    visibility: visible;
+
+    min-width: 400px;
+}
+
 
 h3
 {

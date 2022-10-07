@@ -21,6 +21,8 @@ var stepTime = 0;
 
 var muted = true;
 
+var started = false;
+
 class WitchPhase
 {
     state = {ID, AltName,};
@@ -129,6 +131,13 @@ window.addEventListener('wheel', function (event) {
   
 window.addEventListener('click', function(event)
 {
+    if(started == false)
+    {
+        document.getElementById("startWindow").style.visibility = "hidden";
+        document.getElementById("ambience").play();
+        started = true;
+    }
+
     if(document.getElementById("popupWindow").style.visibility == "visible")
     {
         if(witchActive)
@@ -185,13 +194,7 @@ document.addEventListener("drag", function(event) {
 
 function tryScroll()
 {
-    if(muted)
-    {
-        document.getElementById("ambience").play();
-        muted = false;
-    }
-
-    if(!pauseScroll)
+    if(!pauseScroll && started)
     {
         trees.forEach(element => element.Scroll());
 
