@@ -44,6 +44,7 @@ class ScrollObject
         stepTime++;
         if(stepTime > 200)
         {
+            steps[stepNum].volume = getRandomArbitrary(.3, .5);
             steps[stepNum].play();
             stepNum++;
             if(stepNum > 3)
