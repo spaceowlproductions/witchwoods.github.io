@@ -19,6 +19,8 @@ var steps = [new Audio('audio/step0.mp3'),new Audio('audio/step1.mp3'),new Audio
 var stepNum = 0;
 var stepTime = 0;
 
+var muted = true;
+
 class WitchPhase
 {
     state = {ID, AltName,};
@@ -183,6 +185,12 @@ document.addEventListener("drag", function(event) {
 
 function tryScroll()
 {
+    if(muted)
+    {
+        document.getElementById("ambience").muted = false;
+        muted = false;
+    }
+
     if(!pauseScroll)
     {
         trees.forEach(element => element.Scroll());
