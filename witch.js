@@ -79,11 +79,16 @@ var Describe = function(witch)
 
             for(i = 1; i < item.uses.length; i++)
             {
-                message += ", and to " + item.uses[i];
-
+                if(i != item.uses.length - 1)
+                    message += ", to " + item.uses[i];
+                    
                 if(i == item.uses.length - 1)
-                    message += ". ";
+                    message += ", and to " + item.uses[i] + ". ";
             }
+        }
+        else
+        {
+            message = "It can be used to " + item.uses[0] + ". ";
         }
 
         this.next();
