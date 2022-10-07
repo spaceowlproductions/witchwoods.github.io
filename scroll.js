@@ -15,6 +15,10 @@ var hut;
 var witchActive;
 var witchDone;
 
+var steps = [new Audio('audio/step0.mp3'),new Audio('audio/step1.mp3'),new Audio('audio/step2.mp3'),new Audio('audio/step3.mp3')];
+var stepNum = 0;
+var stepTime = 0;
+
 class WitchPhase
 {
     state = {ID, AltName,};
@@ -37,6 +41,15 @@ class ScrollObject
         const image = document.getElementById("trees" + this.index);
         const posElement =  document.getElementById("center" + this.index);
 
+        stepTime++;
+        if(stepTime > 200)
+        {
+            steps[stepNum].play();
+            stepNum++;
+            if(stepNum > 3)
+                stepNum = 0;
+            stepTime = 0;
+        }
         //console.log("Hey from " + this.index + " with " + this.scale, this.opacity, this.blurValue, this.fade, this.resetScale);
         if(this.scale > 0)
         {
