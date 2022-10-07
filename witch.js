@@ -105,14 +105,18 @@ var Warn = function(witch)
         var message = null;
         if(item.eatPoison)
         {
-            message += "One shouldn't ingest this, lest they wish to be poisoned. ";
+            message = "One shouldn't ingest this, lest they wish to be poisoned. ";
         }
         if(item.touchPoison)
         {
+            if(message == null)
+                message = "";
             message += "The witch glances down at your hands, you should be wearing gloves to handle this. ";
         }
         if(item.conditionalPoison)
         {
+            if(message == null)
+                message = "";
             message += "It can bring an ill fate " + item.conditionalPoison + ". ";
         }
 
