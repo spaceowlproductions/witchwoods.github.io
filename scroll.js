@@ -187,7 +187,7 @@ function tryScroll()
 {
     if(muted)
     {
-        document.getElementById("ambience").muted = false;
+        document.getElementById("ambience").play();
         muted = false;
     }
 
