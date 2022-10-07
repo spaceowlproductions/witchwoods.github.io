@@ -185,6 +185,9 @@ window.addEventListener('click', function(event)
     }
 });  
 
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+
+
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
