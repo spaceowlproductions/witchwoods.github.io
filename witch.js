@@ -1,11 +1,13 @@
 var witch = null;
 var item = null;
+var attention = null;
 
 var witchState = function(itemSelected)
 {
     item = itemSelected;
     console.log(item.name);
     var currentState = new AnswerDoor(this);
+    attention = getRandomArbitrary(3, 10);
 
     this.changeState = function(state)
     {

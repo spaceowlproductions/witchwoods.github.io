@@ -22,6 +22,7 @@ var stepTime = 0;
 var muted = true;
 
 var started = false;
+var knockCount = 0;
 
 class WitchPhase
 {
@@ -163,10 +164,14 @@ window.addEventListener('click', function(event)
 
     if(hutSpawned && pauseScroll && !witchActive && !witchDone)
     {
-        document.getElementById("popupInfo").textContent = witch.act();
-        document.getElementById("popupWindow").style.visibility = "visible";
+        knockCount++;
+        if(knockCount >= attention)
+        {
+            document.getElementById("popupInfo").textContent = witch.act();
+            document.getElementById("popupWindow").style.visibility = "visible";
+            witchActive = true;
+        }
         console.log("knock!");
-        witchActive = true;
     }
 });  
 
