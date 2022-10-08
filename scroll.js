@@ -190,7 +190,21 @@ window.addEventListener('click', function(event)
     }
 });  
 
-document.addEventListener('touchstart', function(e){ e.preventDefault(); });
+document.addEventListener('touchstart', function(e)
+{ 
+    e.preventDefault(); 
+    if(e.deltaY > 0)
+    {
+        tryScroll();
+    }
+});
+
+document.addEventListener('touchend', function(e)
+{ 
+    e.preventDefault(); 
+    scrolling = false;
+});
+
 
 document.addEventListener('keydown', function(event) 
 {
