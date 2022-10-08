@@ -137,6 +137,29 @@ window.addEventListener('wheel', function (event) {
   
 window.addEventListener('click', function(event)
 {
+    interact();
+});  
+
+document.addEventListener('keydown', function(event) 
+{
+    switch (event.code) {
+        case "ArrowUp":
+            // Up pressed
+            tryScroll();
+            break;
+        case "Space":
+            interact();
+            break;
+        case "Enter":
+            interact();
+            break;
+    }    
+});
+
+
+function interact()
+{
+    console.log("interact");
     if(started == false)
     {
         document.getElementById("startWindow").style.visibility = "hidden";
@@ -188,7 +211,7 @@ window.addEventListener('click', function(event)
         
         console.log("knock!");
     }
-});  
+}
 
 document.addEventListener('touchstart', function(e)
 { 
@@ -206,15 +229,6 @@ document.addEventListener('touchend', function(e)
 });
 
 
-document.addEventListener('keydown', function(event) 
-{
-    switch (event.key) {
-        case "ArrowUp":
-            // Up pressed
-            tryScroll();
-            break;
-    }    
-});
 
 document.addEventListener('keyup', function(event)
 {
