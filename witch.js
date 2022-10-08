@@ -152,6 +152,7 @@ var Goodbye = function(witch)
 
     this.next = function()
     {
+        new Audio('audio/DoorClose.mp3').play();
         witch.changeState(new Done(witch));
     }
 }

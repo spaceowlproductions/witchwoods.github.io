@@ -16,6 +16,7 @@ var witchActive;
 var witchDone;
 
 var steps = [new Audio('audio/step0.mp3'),new Audio('audio/step1.mp3'),new Audio('audio/step2.mp3'),new Audio('audio/step3.mp3')];
+var knocks = [new Audio('audio/knock0.mp3'),new Audio('audio/knock1.mp3'),new Audio('audio/knock3.mp3'),new Audio('audio/knock4.mp3'),new Audio('audio/knock5.mp3')];
 var stepNum = 0;
 var stepTime = 0;
 
@@ -56,7 +57,6 @@ class ScrollObject
                 stepNum = 0;
             stepTime = 0;
         }
-        //console.log("Hey from " + this.index + " with " + this.scale, this.opacity, this.blurValue, this.fade, this.resetScale);
         if(this.scale > 0)
         {
             this.scale -= .7;
@@ -165,12 +165,22 @@ window.addEventListener('click', function(event)
     if(hutSpawned && pauseScroll && !witchActive && !witchDone)
     {
         knockCount++;
+
+        var knockID = knockCount;
+        if(knockCount > knocks.length - 1)
+        {
+            knockID -= 5;
+        }
+        knocks[knockID].play();
+
         if(knockCount >= attention)
         {
             document.getElementById("popupInfo").textContent = witch.act();
             document.getElementById("popupWindow").style.visibility = "visible";
+            new Audio('audio/DoorOpen.mp3').play();
             witchActive = true;
         }
+        
         console.log("knock!");
     }
 });  
@@ -209,9 +219,8 @@ function tryScroll()
         if(pickupNumber < scrollAmount && !pickupHappaned)
         {
             var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
-            console.log(randomItem);
 
-            console.log("pickup");
+            new Audio('audio/pick.mp3').play();
             this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
             document.getElementById("popupWindow").style.visibility = "visible";
             pickupNumber = 0;
