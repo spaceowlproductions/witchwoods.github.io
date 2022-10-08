@@ -2,6 +2,8 @@ var z = 0;
 
 var scrollAmount = 0;
 var pauseScroll = false;
+var scrolling = false;
+
 var pickupHappaned;
 var spawnHut;
 var hutSpawned;
@@ -25,10 +27,6 @@ var muted = true;
 var started = false;
 var knockCount = 0;
 
-class WitchPhase
-{
-    state = {ID, AltName,};
-}
 class ScrollObject
 {
     constructor(index, scale, opacity, blurValue, fade)
@@ -125,9 +123,16 @@ const trees3 = new ScrollObject(2, 100, 0, 0, 1);
 const trees = [trees1, trees2, trees3];
 
 window.addEventListener('wheel', function (event) {
-    if (event.deltaY > 0) {
+    if (event.deltaY > 0) 
+    {
         tryScroll();
+        clearTimeout(_scrollTimeout);
+        _scrollTimeout = setTimeout(function() 
+        {
+            scrolling = false;
+        }, 250);
     }
+
 });
   
 window.addEventListener('click', function(event)
@@ -187,15 +192,23 @@ window.addEventListener('click', function(event)
 
 document.addEventListener('touchstart', function(e){ e.preventDefault(); });
 
-document.addEventListener('keydown', function(event) {
-
+document.addEventListener('keydown', function(event) 
+{
     switch (event.key) {
         case "ArrowUp":
-            console.log("keyUP");
             // Up pressed
             tryScroll();
             break;
     }    
+});
+
+document.addEventListener('keyup', function(event)
+{
+    switch (event.key) {
+        case "ArrowUp":
+            scrolling = false;
+            break;
+    }
 });
 
 document.addEventListener("drag", function(event) {
@@ -211,29 +224,11 @@ function tryScroll()
 {
     if(!pauseScroll && started)
     {
-        trees.forEach(element => element.Scroll());
-
-        scrollAmount += 1;
-        console.log(scrollAmount);
-
-        if(pickupNumber < scrollAmount && !pickupHappaned)
+        if(!scrolling)
         {
-            var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
-
-            new Audio('audio/pick.mp3').play();
-            this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
-            document.getElementById("popupWindow").style.visibility = "visible";
-            pickupNumber = 0;
-            pickupHappaned = true;
-            pauseScroll = true;
+            window.requestAnimationFrame(loop);
+            scrolling = true;
         }
-
-        if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
-        {
-            spawnHut = true;
-        }
-
-
     }
 }
 
@@ -241,4 +236,50 @@ function tryScroll()
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
+  
+
+function update(progress) 
+{
+    // Update the state of the world for the elapsed time since last render
+    if(!pauseScroll)
+    {
+        trees.forEach(element => element.Scroll());
+
+        scrollAmount += 1;
+    
+        if(pickupNumber < scrollAmount && !pickupHappaned)
+        {
+            var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
+    
+            new Audio('audio/pick.mp3').play();
+            this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
+            document.getElementById("popupWindow").style.visibility = "visible";
+            pickupNumber = 0;
+            pickupHappaned = true;
+            pauseScroll = true;
+        }
+    
+        if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
+        {
+            spawnHut = true;
+        }    
+    }
+}
+  
+function loop(timestamp) 
+{
+    if(scrolling)
+    {
+        var progress = timestamp - lastRender;
+
+        update(progress);
+      
+        lastRender = timestamp;
+        window.requestAnimationFrame(loop);      
+    }
+}
+
+var lastRender = 0
+
+var _scrollTimeout = null;
   

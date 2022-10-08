@@ -116,7 +116,7 @@ const grimoireRaw = [
         "bioName": "Carum Carvi",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "confer the quality of retention when eaten", "prevent theft", "bring back or prevent a lover from straying if one places a few seeds into their pocket", "if fed to a bird, lure it back to its nest", "return a guest to the spot where one fed it to them" ]
+        "uses": [ "confer the quality of retention when eaten", "prevent theft", "bring back or prevent a lover from straying if one places a few seeds into their pocket", "lure a bird back to its nest when fed", "return a guest to the spot where one fed it to them" ]
     },
     {
         "name": "Chicory",
