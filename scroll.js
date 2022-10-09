@@ -160,12 +160,6 @@ document.addEventListener('keydown', function(event)
 function interact()
 {
     console.log("interact");
-    if(started == false)
-    {
-        document.getElementById("startWindow").style.visibility = "hidden";
-        document.getElementById("ambience").play();
-        started = true;
-    }
 
     if(document.getElementById("popupWindow").style.visibility == "visible")
     {
@@ -311,3 +305,13 @@ var lastRender = 0
 
 var _scrollTimeout = null;
   
+function startExperience()
+{
+    console.log("start experience");
+    if(started == false)
+    {
+        document.getElementById("startWindow").style.visibility = "hidden";
+        document.getElementById("ambience").play();
+        started = true;
+    }
+}

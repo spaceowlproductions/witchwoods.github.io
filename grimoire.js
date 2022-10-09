@@ -15,7 +15,7 @@ const grimoireRaw = [
         "bioName": "Alyssum maritima",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "appease agner", "cure madness", "cure hydrophobia" ]
+        "uses": [ "appease anger", "cure madness", "cure hydrophobia" ]
     },
     {
         "name": "Angelica",
@@ -129,9 +129,15 @@ const grimoireRaw = [
 
 var itemPicked = null;
 
+var selectedFlora = null;
+
 function pickupItem(itemNum)
 {
-    itemPicked = grimoireRaw[itemNum];
+    if(selectedFlora == null)
+        itemPicked = grimoireRaw[itemNum];
+    else
+        itemPicked = selectedFlora;
+
     setupWitch(itemPicked);
     return "You find " + itemPicked.description + ", and place it in your basket to present to the witch in the woods.";
 }
