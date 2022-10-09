@@ -199,11 +199,6 @@ body {
     color: aliceblue;
   }
   
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-
-  }
-  
   /* The search field */
   #myInput {
     box-sizing: border-box;
