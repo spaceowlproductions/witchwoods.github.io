@@ -210,6 +210,7 @@ function interact()
 
 document.addEventListener('touchstart', function(e)
 { 
+    interact();
     e.preventDefault(); 
     if(e.deltaY > 0)
     {
