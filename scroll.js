@@ -211,16 +211,10 @@ function interact()
 document.addEventListener('touchstart', function(e)
 { 
     interact();
-    e.preventDefault(); 
-    if(e.deltaY > 0)
-    {
-        tryScroll();
-    }
 });
 
 document.addEventListener('touchend', function(e)
 { 
-    e.preventDefault(); 
     scrolling = false;
 });
 
@@ -235,7 +229,7 @@ document.addEventListener('keyup', function(event)
     }
 });
 
-document.addEventListener("drag", function(event) {
+document.addEventListener("touchmove", function(event) {
     if(event.deltaY > 0)
     {
         tryScroll();
