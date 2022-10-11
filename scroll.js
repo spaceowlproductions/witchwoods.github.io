@@ -225,9 +225,15 @@ document.addEventListener('keyup', function(event)
     }
 });
 
+var lastY = 5000;
 document.addEventListener("touchmove", function(e) {
-    console.log("move " + e.touches[0].deltaY);
-    tryScroll();
+    if(e.touches[0].clientY < lastY)
+    {
+        tryScroll();
+    }
+    else
+        scrolling = false;
+    lastY = e.touches[0].clientY;
   });  
 
 
