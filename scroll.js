@@ -27,6 +27,10 @@ var muted = true;
 var started = false;
 var knockCount = 0;
 
+var smallWindow = false;
+if(window.innerWidth < 400)
+    smallWindow = true;
+
 class ScrollObject
 {
     constructor(index, scale, opacity, blurValue, fade)
@@ -115,11 +119,102 @@ class ScrollObject
 
         }
     }
+
+    ScrollSmall()
+    {
+        const image = document.getElementById("trees" + this.index);
+        const posElement =  document.getElementById("center" + this.index);
+
+        stepTime++;
+        if(stepTime > 200)
+        {
+            steps[stepNum].volume = getRandomArbitrary(.3, .5);
+            steps[stepNum].play();
+            stepNum++;
+            if(stepNum > 3)
+                stepNum = 0;
+            stepTime = 0;
+        }
+        if(this.scale > 0)
+        {
+            this.scale -= .5;
+            this.opacity += .005;
+
+            posElement.style.padding = this.scale + "px";
+            image.style.filter = "brightness(" + this.opacity + ")";
+
+            if(this.scale < 60 && image.getAttribute("src") == "art/hut.png")
+            {
+                pauseScroll = true;
+                console.log("at hut");
+            }
+    
+            if(this.scale < 30)
+            {
+                this.blurValue += .6;
+                this.fade -= .5;
+                image.style.filter = "brightness(" + this.fade + ")";
+                image.style.filter = "blur(" + this.blurValue + "px)";
+
+            }
+        }
+        else
+        {
+            this.scale = 150;
+            this.opacity = 0;
+
+            this.blurValue = 0;
+            this.fade = 1;
+
+            posElement.style.padding = this.resetScale + "px";
+
+            image.style.filter = "blur(" + this.blurValue + "px)";
+
+            image.style.filter = "brightness(" + this.opacity + ")";
+
+            var randNum = Math.floor(Math.random() * 20);
+
+            var coinFlip = Math.floor(Math.random() * 2);
+            if(coinFlip == 1) {randNum = randNum * -1};
+
+            image.style.transform = "translate(" + randNum + "px)";
+
+            z = z - 1;
+            posElement.style.zIndex = z;
+            image.style.zIndex = z;
+
+            if(spawnHut)
+            {
+                image.src="art/hut.png";
+                image.style.transform = "translate(" + -randNum + "px)";
+                hutSpawned = true;
+                hut = image;  
+                spawnHut = false; 
+            }
+
+
+        }
+    }
+
 }
 
-const trees1 = new ScrollObject(0, 300, 0, 0, 1);
-const trees2 = new ScrollObject(1, 200, 0, 0, 1);
-const trees3 = new ScrollObject(2, 100, 0, 0, 1);
+var trees1 = null;
+var trees2 = null;
+var trees3 = null;
+
+if(!smallWindow)
+{
+    trees1 = new ScrollObject(0, 300, 0, 0, 1);
+    trees2 = new ScrollObject(1, 200, 0, 0, 1);
+    trees3 = new ScrollObject(2, 100, 0, 0, 1);
+}
+else
+{
+    var trees1 = new ScrollObject(0, 150, 0, 0, 1);
+    var trees2 = new ScrollObject(1, 110, 0, 0, 1);
+    var trees3 = new ScrollObject(2, 70, 0, 0, 1);
+
+}
 
 const trees = [trees1, trees2, trees3];
 
@@ -261,7 +356,11 @@ function update(progress)
     // Update the state of the world for the elapsed time since last render
     if(!pauseScroll)
     {
-        trees.forEach(element => element.Scroll());
+        if(!smallWindow)
+            trees.forEach(element => element.Scroll());
+        else
+            trees.forEach(element => element.ScrollSmall());
+
 
         scrollAmount += 1;
     
