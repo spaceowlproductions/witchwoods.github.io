@@ -136,10 +136,6 @@ window.addEventListener('wheel', function (event) {
 
 });
   
-window.addEventListener('click', function(event)
-{
-    interact();
-});  
 
 document.addEventListener('keydown', function(event) 
 {
@@ -229,8 +225,8 @@ document.addEventListener('keyup', function(event)
     }
 });
 
-document.addEventListener("touchmove", function(event) {
-    console.log("move " + event.deltaY);
+document.addEventListener("touchmove", function(e) {
+    console.log("move " + e.touches[0].deltaY);
     tryScroll();
   });  
 
