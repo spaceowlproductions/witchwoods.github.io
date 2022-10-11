@@ -108,7 +108,8 @@ class ScrollObject
                 image.src="art/hut.png";
                 image.style.transform = "translate(" + -randNum + "px)";
                 hutSpawned = true;
-                hut = image;   
+                hut = image;  
+                spawnHut = false; 
             }
 
 

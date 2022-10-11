@@ -47,8 +47,10 @@
 {
     display: block;
     transform: translate(0%,0%);
-    width: 1000px;
-    height: 1000px;
+    width: 100%;
+    max-width: 800px;
+    height: 0px;
+    padding-bottom: 100%;
     overflow: hidden;
     background: rgb(0, 0, 0);
     position: relative;
@@ -89,9 +91,15 @@
 
 #canopy
 {
-    height: 100%;
-    top: 0%;
+    display: block;
+    width: 100%;
+    padding: px;
     position: absolute;
+    text-align: center;
+
+    top: 0%;
+    left: 0%;    
+
     z-index: 98;
 }
 
@@ -121,16 +129,15 @@
     word-wrap: break-word;
     word-break: break-word;
 
-    transform: translate(0%, 20px);
-    position: relative;
+    /* transform: translate(0%, 20px); */
+    position: fixed;
+    top: 50px;
 
     z-index: 100;
 
     font-family:Tahoma, sans-serif;
 
     visibility: hidden;
-
-    min-width: 400px;
 }
 
 #startWindow
@@ -142,14 +149,34 @@
     word-wrap: break-word;
     word-break: break-word;
 
-    transform: translate(0%, 20px);
-    position: relative;
+    position: fixed;
+    top: 50px;
 
     z-index: 100;
 
     font-family:Tahoma, sans-serif;
 
     visibility: visible;
+
+}
+
+#spacer
+{
+    margin: 1% 30%;
+    border: 3px solid rgb(34, 6, 40);
+    background-color: rgba(34, 6, 40, 0.784);
+
+    word-wrap: break-word;
+    word-break: break-word;
+
+    /* transform: translate(0%, 20px); */
+    position: relative;
+
+    z-index: 100;
+
+    font-family:Tahoma, sans-serif;
+
+    visibility: hidden;
 
     min-width: 400px;
 }
@@ -179,6 +206,7 @@ html {
     display: table;
     margin: auto;
     background-color: black;
+    max-height: 98%;
 }
 
 body {
