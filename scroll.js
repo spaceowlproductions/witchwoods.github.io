@@ -230,10 +230,8 @@ document.addEventListener('keyup', function(event)
 });
 
 document.addEventListener("touchmove", function(event) {
-    if(event.deltaY > 0)
-    {
-        tryScroll();
-    }
+    console.log("move " + event.deltaY);
+    tryScroll();
   });  
 
 
