@@ -9,7 +9,6 @@
     <script src="grimoire.js" id="grimoire"></script>
     <script src="witch.js" id="witch"></script>
     <script name="grimoireText" type="text/javascript" src="grimoire.json"></script>     
-    <script name="search" src="search.js"></script>
     <audio loop id ="ambience">
         <source src="audio/cicada.mp3" type="audio/mpeg">
         Audio not supported in browser!
@@ -59,15 +58,13 @@
                 Thanks for visiting.
             </p>              
             <div class="dropdown">
-                <div id="menuButtons">
-
-                </div>
-                <button onclick="searchFlora()" class="dropbtn">Search Flora</button>
+                <div id="menuButtons"></div>
+                <button id="searchButton" class="dropbtn">Search Flora</button>
                 <div id="myDropdown" class="dropdown-content">
                   <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                 </div>
               </div>
-                <button onclick="randomFlora()" class="dropbtn">Randomized</button>
+                <button id="randomButton" class="dropbtn">Randomized</button>
         </div>
         <div id = "popupWindow"> 
             <p id = "popupInfo">
@@ -75,6 +72,8 @@
             </p>
         </div>
     </div>
-    
+
 </body>
+<script name="search" src="search.js"></script>
+
 </html>

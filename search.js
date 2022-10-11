@@ -4,6 +4,11 @@ function searchFlora() {
     document.getElementById("myDropdown").classList.toggle("show");
     loadButtons();
   }
+  var searchButton = document.getElementById("searchButton");
+  if(searchButton != null)
+  {
+    searchButton.addEventListener('click', searchFlora);
+  }
   
   function filterFunction() {
     var input, filter, ul, li, button, i;
@@ -46,8 +51,16 @@ function floraSelect(evt)
     startExperience();
 }
 
+var randomButton = document.getElementById("randomButton");
+if(randomButton != null)
+{
+  randomButton.addEventListener('click', randomFlora);
+}
+
 function randomFlora()
 {
     startExperience();
 }
+
+
   
