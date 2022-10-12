@@ -62,5 +62,9 @@ function randomFlora()
     startExperience();
 }
 
+document.getElementById("refresh").addEventListener("click", restart)
 
-  
+function restart()
+{
+  location.reload();
+}
