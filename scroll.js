@@ -305,6 +305,11 @@ document.addEventListener('touchstart', function(e)
     interact();
 });
 
+document.addEventListener('click', function(e)
+{ 
+    interact();
+});
+
 document.addEventListener('touchend', function(e)
 { 
     scrolling = false;

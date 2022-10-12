@@ -43,6 +43,7 @@ function createButton(flora)
     element.appendChild(tag);
     tag.item = flora;
     tag.addEventListener('touchstart', floraSelect);
+    tag.addEventListener('click', floraSelect);
 }
 
 function floraSelect(evt)
