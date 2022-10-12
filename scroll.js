@@ -302,6 +302,7 @@ function interact()
 
 document.addEventListener('click', function(e)
 { 
+    e.stopImmediatePropagation();
     interact();
 });
 
