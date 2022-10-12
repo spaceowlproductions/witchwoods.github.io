@@ -49,6 +49,7 @@ function floraSelect(evt)
     selectedFlora = evt.currentTarget.item;
     console.log(selectedFlora.name);
     startExperience();
+    updateInfo("Foraging for " + selectedFlora.name);
 }
 
 var randomButton = document.getElementById("randomButton");
@@ -60,6 +61,7 @@ if(randomButton != null)
 function randomFlora()
 {
     startExperience();
+    updateInfo("Foraging for random flora.");
 }
 
 document.getElementById("refresh").addEventListener("click", restart)
@@ -67,4 +69,11 @@ document.getElementById("refresh").addEventListener("click", restart)
 function restart()
 {
   location.reload();
+}
+
+const info = document.getElementById("info");
+
+function updateInfo(text)
+{
+  info.textContent = text;
 }

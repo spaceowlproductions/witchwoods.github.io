@@ -17,8 +17,8 @@ var hut;
 var witchActive;
 var witchDone;
 
-var steps = [new Audio('audio/step0.mp3'),new Audio('audio/step1.mp3'),new Audio('audio/step2.mp3'),new Audio('audio/step3.mp3')];
-var knocks = [new Audio('audio/knock0.mp3'),new Audio('audio/knock1.mp3'),new Audio('audio/knock3.mp3'),new Audio('audio/knock4.mp3'),new Audio('audio/knock5.mp3')];
+var steps = ['audio/step0.mp3','audio/step1.mp3','audio/step2.mp3','audio/step3.mp3'];
+var knocks = ['audio/knock0.mp3','audio/knock1.mp3','audio/knock3.mp3','audio/knock4.mp3','audio/knock5.mp3'];
 var stepNum = 0;
 var stepTime = 0;
 
@@ -128,13 +128,13 @@ class ScrollObject
         stepTime++;
         if(stepTime > 200)
         {
-            steps[stepNum].volume = getRandomArbitrary(.3, .5);
-            steps[stepNum].play();
+            var stepAudio = new Audio(steps[stepNum]);
+            stepAudio.volume = getRandomArbitrary(.3, .5);
+            stepAudio.play();
             stepNum++;
             if(stepNum > 3)
                 stepNum = 0;
             stepTime = 0;
-            console.log("Step sound.");
         }
         if(this.scale > 0)
         {
@@ -279,14 +279,14 @@ function interact()
 
     if(hutSpawned && pauseScroll && !witchActive && !witchDone)
     {
-        knockCount++;
-
         var knockID = knockCount;
-        if(knockCount > knocks.length - 1)
+        if(knockID >= knocks.length)
         {
-            knockID -= 5;
+            knockID -= (knocks.length);
         }
-        knocks[knockID].play();
+        console.log(knocks[knockID]);
+        new Audio(knocks[knockID]).play();
+        knockCount++;
 
         if(knockCount >= attention)
         {
@@ -376,6 +376,7 @@ function update(progress)
             pickupNumber = 0;
             pickupHappaned = true;
             pauseScroll = true;
+            updateInfo(itemPicked.name + " collected.");
         }
     
         if(pickupHappaned && !spawnHut && hutNumber < scrollAmount)
