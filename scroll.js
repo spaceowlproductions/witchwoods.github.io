@@ -300,11 +300,6 @@ function interact()
     }
 }
 
-document.addEventListener('touchstart', function(e)
-{ 
-    interact();
-});
-
 document.addEventListener('click', function(e)
 { 
     interact();

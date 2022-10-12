@@ -8,7 +8,6 @@ function searchFlora() {
   if(searchButton != null)
   {
     searchButton.addEventListener('click', searchFlora);
-    searchButton.addEventListener('touchstart', searchFlora);
   }
   
   function filterFunction() {
@@ -42,7 +41,6 @@ function createButton(flora)
     var element = document.getElementById("myDropdown");
     element.appendChild(tag);
     tag.item = flora;
-    tag.addEventListener('touchstart', floraSelect);
     tag.addEventListener('click', floraSelect);
 }
 
@@ -56,7 +54,6 @@ function floraSelect(evt)
 var randomButton = document.getElementById("randomButton");
 if(randomButton != null)
 {
-  randomButton.addEventListener('touchstart', randomFlora);
   randomButton.addEventListener('click', randomFlora);
 }
 
