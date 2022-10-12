@@ -7,6 +7,7 @@ function searchFlora() {
   var searchButton = document.getElementById("searchButton");
   if(searchButton != null)
   {
+    searchButton.addEventListener('click', searchFlora);
     searchButton.addEventListener('touchstart', searchFlora);
   }
   
@@ -55,6 +56,7 @@ var randomButton = document.getElementById("randomButton");
 if(randomButton != null)
 {
   randomButton.addEventListener('touchstart', randomFlora);
+  randomButton.addEventListener('click', randomFlora);
 }
 
 function randomFlora()

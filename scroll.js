@@ -134,6 +134,7 @@ class ScrollObject
             if(stepNum > 3)
                 stepNum = 0;
             stepTime = 0;
+            console.log("Step sound.");
         }
         if(this.scale > 0)
         {
