@@ -52,8 +52,9 @@ class ScrollObject
         stepTime++;
         if(stepTime > 200)
         {
-            steps[stepNum].volume = getRandomArbitrary(.3, .5);
-            steps[stepNum].play();
+            var stepAudio = new Audio(steps[stepNum]);
+            stepAudio.volume = getRandomArbitrary(.3, .5);
+            stepAudio.play();
             stepNum++;
             if(stepNum > 3)
                 stepNum = 0;
