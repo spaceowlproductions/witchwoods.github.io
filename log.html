@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimoire Logging</title>
+</head>
+<body>
+    <form>
+        <div class="formBox">
+            <label for="name">Name</label>
+            <input type="text" id ="name" placeholder="Name..."/>
+        </div>
+        <div class="formBox">
+            <label for="description">Description</label>
+            <input type="text" id ="description" placeholder="a stem of leaves"/>
+        </div>
+        <div class="formBox">
+            <label for="altNames">Alternate Names</label>
+            <input type="text" id ="altNames" placeholder="edibus, maximus,etc"/>
+        </div>
+        <div class="formBox">
+            <label for="bioName">Bio Name</label>
+            <input type="text" id ="bioName" placeholder="Bio Name..."/>
+        </div>
+        <div class="formBox">
+            <label for="eatPoison">Poisonous if eaten?</label>
+            <input type="checkbox" id ="eatPoison"/>
+        </div>
+        <div class="formBox">
+            <label for="touchPoison">Poisonous to the touch?</label>
+            <input type="checkbox" id ="touchPoison"/>
+        </div>
+        <div class="formBox">
+            <label for="conditionalPoison">Only poisonous if...</label>
+            <input type="text" id ="conditionalPoison" placeholder="gathered at sunset"/>
+        </div>
+        <div class="formBox">
+            <label for="uses">Uses</label>
+            <input type="text" id ="uses" placeholder="brew a potion, ward off people, etc..."/>
+        </div>
+        <div class="formBox">
+            <button id="btn">Add to Grimoire</button>
+        </div>
+        <div id="msg">
+            <pre></pre>
+        </div>
+    </form>
+
+    <script>
+        let floraAdditions = [];
+        const addFlora = (ev) =>
+        {
+            ev.preventDefault();
+
+            var eatPosion = false;
+            var touchPoison = false;
+            if(document.getElementById('eatPoison').checked)
+            {
+                eatPosion = true;
+            }
+
+            if(document.getElementById('touchPoison').checked)
+            {
+                touchPoison = true;
+            }
+
+            var altNamesRaw = document.getElementById('altNames').value;
+            var altNames = "[" + altNamesRaw.split( "," ).join( '","' ).replace("'", "\"") + "]";
+
+            let flora = 
+            {
+                name: document.getElementById('name').value,
+                description: document.getElementById('description').value,
+                altNames: altNames,
+                bioName: document.getElementById('bioName').value,
+                eatPoison: eatPosion,
+                touchPoison: touchPoison,
+                conditionalPoison: document.getElementById('conditionalPoison').value,
+                uses: document.getElementById('uses').value
+            }
+
+            floraAdditions.push(flora);
+            document.forms[0].reset();
+
+            console.warn('added', {flora});
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(flora, "\t", 2);
+        }
+        document.addEventListener('DOMContentLoaded', ()=>
+        {
+            document.getElementById('btn').addEventListener('click', addFlora);
+        });
+    </script>
+</body>
+</html>
