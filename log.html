@@ -50,6 +50,7 @@
 
     <script>
         let floraAdditions = [];
+
         const addFlora = (ev) =>
         {
             ev.preventDefault();
@@ -66,8 +67,10 @@
                 touchPoison = true;
             }
 
-            var altNamesRaw = document.getElementById('altNames').value;
-            var altNames = "[" + altNamesRaw.split( "," ).join( '","' ).replace("'", "\"") + "]";
+            var altNames = toArray(document.getElementById('altNames').value);
+
+            var uses = toArray(document.getElementById('uses').value);
+
 
             let flora = 
             {
@@ -78,20 +81,26 @@
                 eatPoison: eatPosion,
                 touchPoison: touchPoison,
                 conditionalPoison: document.getElementById('conditionalPoison').value,
-                uses: document.getElementById('uses').value
+                uses: uses
             }
 
             floraAdditions.push(flora);
             document.forms[0].reset();
 
-            console.warn('added', {flora});
             let pre = document.querySelector('#msg pre');
-            pre.textContent = '\n' + JSON.stringify(flora, "\t", 2);
+            pre.textContent = '\n' + JSON.stringify(floraAdditions, "\t", 2);
         }
         document.addEventListener('DOMContentLoaded', ()=>
         {
             document.getElementById('btn').addEventListener('click', addFlora);
         });
+
+        function toArray(formText)
+        {
+            formText = formText.replaceAll(', ', ',');
+            formText = formText.replaceAll(' ,', ',');
+            return formText.split(',');
+        }
     </script>
 </body>
 </html>
