@@ -7,14 +7,17 @@
     <title>Grimoire Logging</title>
 </head>
 <body>
-    <form>
+    <h1>
+        Grimoire Logger
+    </h1>
+    <form id="form">
         <div class="formBox">
             <label for="name">Name</label>
             <input type="text" id ="name" placeholder="Name..."/>
         </div>
         <div class="formBox">
-            <label for="description">Description</label>
-            <input type="text" id ="description" placeholder="a stem of leaves"/>
+            <label for="description">Description</label><br>
+            <textarea form="form" type="text" id ="description" placeholder="a stem of leaves"></textarea>
         </div>
         <div class="formBox">
             <label for="altNames">Alternate Names</label>
@@ -102,5 +105,33 @@
             return formText.split(',');
         }
     </script>
+
+    <style>
+        h1
+        {
+            color: aliceblue;
+            font-style: oblique;
+        }
+        .formBox
+        {
+            font-family:Tahoma, sans-serif;
+            color: aliceblue;
+        }
+
+        #msg
+        {
+            color: aliceblue;
+        }
+
+        input[type=text]
+        {
+            width: 100%;
+        }
+
+        html
+        {
+            background-color: rgb(34, 6, 40);
+        }
+    </style>
 </body>
 </html>
