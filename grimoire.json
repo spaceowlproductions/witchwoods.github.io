@@ -46,7 +46,7 @@
     },
     {
         "name": "Aspen Tree",
-        "description": "a branch of an Aspen Tree", //todo make more descriptive?
+        "description": "a branch of an Aspen Tree",
         "bioName": "Archangelica",
         "eatPoison": false,
         "touchPoison": false,
