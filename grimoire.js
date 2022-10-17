@@ -120,11 +120,48 @@ const grimoireRaw = [
     },
     {
         "name": "Chicory",
-        "description": "a fairly woody stalk with bright blue flowers",
+        "description": "a woody herbaceous plant with little pale flowers",
+        "altNames": [
+        ""
+        ],
+        "bioName": "Cichorium intybus",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "render the possessor invisible to onlookers" ]
+        "conditionalPoison": "",
+        "uses": [
+        "render a witch invisible to onlookers by holding their seeds",
+        "reduce swelling if ingested",
+        "aid in culinary recipes"
+        ]
+    },
+    {
+        "name": "Four-Leaf Clover",
+        "description": "a small grouping of four heart-shaped leaves on a grassy stem",
+        "bioName": "Trifolium variation",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+        "detect witches and fairies",
+        "cure illness",
+        "avert the Evil Eye",
+        "protect its wearer from military service"
+        ]
+    },
+    {
+        "name": "Clover",
+        "description": "a bunch of grassy stalks with small groups of three heart-shaped leaves",
+        "altNames": [
+        "trefoil"
+        ],
+        "bioName": "Trifolium",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+        "represent the Christian Trinity",
+        "serve as a sacred protector"
+        ]
     }
+
 ];
 
 var itemPicked = null;
