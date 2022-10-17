@@ -19,6 +19,7 @@ var witchDone;
 
 var steps = ['audio/step0.mp3','audio/step1.mp3','audio/step2.mp3','audio/step3.mp3'];
 var knocks = ['audio/knock0.mp3','audio/knock1.mp3','audio/knock3.mp3','audio/knock4.mp3','audio/knock5.mp3'];
+var pickupSound = new Audio('audio/pick.mp3'); 
 var stepNum = 0;
 var stepTime = 0;
 
@@ -30,6 +31,7 @@ var knockCount = 0;
 var smallWindow = false;
 if(window.innerWidth < 400)
     smallWindow = true;
+
 
 class ScrollObject
 {
@@ -130,7 +132,6 @@ class ScrollObject
         if(stepTime > 200)
         {
             var stepAudio = new Audio(steps[stepNum]);
-            stepAudio.volume = getRandomArbitrary(.3, .5);
             stepAudio.play();
             stepNum++;
             if(stepNum > 3)
@@ -371,7 +372,7 @@ function update(progress)
         {
             var randomItem = Math.floor(getRandomArbitrary(0, grimoireRaw.length - 1));
     
-            new Audio('audio/pick.mp3').play();
+            pickupSound.play();
             this.document.getElementById("popupInfo").textContent = pickupItem(randomItem);
             document.getElementById("popupWindow").style.visibility = "visible";
             pickupNumber = 0;
