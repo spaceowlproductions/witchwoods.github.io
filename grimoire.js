@@ -160,8 +160,54 @@ const grimoireRaw = [
         "represent the Christian Trinity",
         "serve as a sacred protector"
         ]
+    },
+    {
+        "name": "Colchicum",
+        "description": "a collection of pink flower bulbs on stems without leaves",
+        "altNames": [
+        "autumn crocus",
+        "meadow saffron",
+        "naked ladies"
+        ],
+        "bioName": "Colchicum autumnale",
+        "eatPoison": true,
+        "touchPoison": false,
+        "uses": [
+        "remedy gout if processed into colchicine",
+        "drug someone if fed in small doses",
+        "kill someone if given small doses over a long period of time "
+        ]
+    },
+    {
+        "name": "Cyclamen",
+        "description": "a circular growth of leaves and blossoms protruding from earth-soaked tubers",
+        "altNames": [
+        "Narcissus Hederifolium",
+        "the drinkers plant"
+        ],
+        "bioName": "Cyclamen purperescens",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "stepped on by a pregnant person, as this can cause a miscarriage",
+        "uses": [
+        "brew a love potion",
+        "treat diseases of the ears",
+        "act as an antidote to poison",
+        "bring drunkeness if added to wine"
+        ]
+    },
+    {
+        "name": "Dill",
+        "description": "a bunch of hollow stems, feathering out into umbels of delicate yellow blossoms",
+        "bioName": "Anethum graveolens",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+        "imbue the effect of mild sedation if added to a water or potion",
+        "protect against the power of witches",
+        "aid witches in various forms of destruction"
+        ]
     }
-
 ];
 
 var itemPicked = null;
