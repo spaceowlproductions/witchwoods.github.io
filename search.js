@@ -6,9 +6,8 @@ function searchFlora() {
     document.getElementById("searchInput").classList.toggle("show");
 
     if(smallWindow)
-    {
-      document.getElementById("searchInput").classList.toggle("dropUp");
-    }
+      document.getElementById("myDropdown").classList.toggle("dropUp");
+
     loadButtons();
   }
   var searchButton = document.getElementById("searchButton");

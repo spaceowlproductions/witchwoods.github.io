@@ -319,7 +319,7 @@ body {
 
   .dropUp
   {
-    display:block;
-    top: 0px;
-    bottom: 100%;
+    top: auto;
+    bottom: 0%;
+    background-color: rgba(34, 6, 40, 1);
   }
