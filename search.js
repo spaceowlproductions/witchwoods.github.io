@@ -1,7 +1,14 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function searchFlora() {
+
     document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("searchInput").classList.toggle("show");
+
+    if(smallWindow)
+    {
+      document.getElementById("searchInput").classList.toggle("dropUp");
+    }
     loadButtons();
   }
   var searchButton = document.getElementById("searchButton");

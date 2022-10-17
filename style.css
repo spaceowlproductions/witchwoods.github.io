@@ -278,6 +278,16 @@ body {
     display: inline-block;
     
   }
+
+  .searchInput
+  {
+    display: none;
+    position: absolute;
+    min-width: 230px;
+    z-index: 2;
+    top: 100%;
+    border: 3px solid rgb(34, 6, 40);
+  }
   
   .dropdown-content {
     display: none;
@@ -288,6 +298,7 @@ body {
     z-index: 1;
     overflow-y: scroll;
     max-height: 40vh;
+    top: 200%;
   }
   
   .dropdown-content button {
@@ -304,4 +315,11 @@ body {
   .show 
   {
     display:block;
+  }
+
+  .dropUp
+  {
+    display:block;
+    top: 0px;
+    bottom: 100%;
   }
