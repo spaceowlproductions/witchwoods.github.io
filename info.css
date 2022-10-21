@@ -1,0 +1,75 @@
+#colorAdd
+{
+    display: block;
+    position: absolute;
+
+    min-width: 1000px;
+    min-height: 1000px;
+
+    top: 50%;
+    left: 0%;    
+    transform: translate(0%, -50%);
+
+
+    background-color: rgb(36, 133, 91);
+    mix-blend-mode: darken;
+    z-index: 99;
+}
+
+#startWindow
+{
+    margin: 10% 10%;
+    border: 3px solid rgb(34, 6, 40);
+    background-color: rgba(34, 6, 40, 0.784);
+
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-y: scroll;
+
+    top: 50px;
+
+    z-index: 100;
+
+
+    font-family:Tahoma, sans-serif;
+
+    visibility: visible;
+
+}
+
+h3
+{
+    text-align: center;
+    text-overflow: normal;
+    padding: 10px 0;
+    color: aliceblue;
+}
+
+p
+{
+    text-overflow: normal;
+    padding: 20px 30px;
+    color: aliceblue;
+}
+
+a
+{
+    font-family:Tahoma, sans-serif;
+    color: rgb(36, 133, 91);
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    display: table;
+    margin: auto;
+    background-color: black;
+    max-height: 98%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}

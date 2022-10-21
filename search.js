@@ -83,3 +83,10 @@ function updateInfo(text)
 {
   info.textContent = text;
 }
+
+document.getElementById("infoButton").addEventListener("click", infoWindow)
+
+function infoWindow()
+{
+  window.open("info.html", "_blank");
+}
