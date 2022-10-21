@@ -1,19 +1,14 @@
 #colorAdd
 {
+    position:absolute;
     display: block;
-    position: absolute;
 
-    min-width: 1000px;
-    min-height: 1000px;
-
-    top: 50%;
-    left: 0%;    
-    transform: translate(0%, -50%);
-
+    width: 100%;
+    height: 100%;
 
     background-color: rgb(36, 133, 91);
     mix-blend-mode: darken;
-    z-index: 99;
+    z-index: 1;
 }
 
 #startWindow
@@ -28,7 +23,7 @@
 
     top: 50px;
 
-    z-index: 100;
+    z-index: 101;
 
 
     font-family:Tahoma, sans-serif;
@@ -36,6 +31,20 @@
     visibility: visible;
 
 }
+
+#adelma
+{
+    text-align: center;
+    display: block;
+    width:60vw;
+}
+
+#img-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
 
 h3
 {
@@ -55,6 +64,11 @@ p
 a
 {
     font-family:Tahoma, sans-serif;
+    color: rgb(36, 133, 91);
+}
+
+em
+{
     color: rgb(36, 133, 91);
 }
 
