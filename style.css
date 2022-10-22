@@ -142,12 +142,13 @@
 
 #startWindow
 {
-    margin: 1% 10%;
-    border: 3px solid rgb(34, 6, 40);
+    margin: 0% 10%;
+    border: 5px solid rgb(34, 6, 40);
     background-color: rgba(34, 6, 40, 0.784);
 
     word-wrap: break-word;
     word-break: break-word;
+    display: block;
 
     position: fixed;
     top: 50px;
@@ -227,8 +228,8 @@
 {
     display: inline-block;
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 40px;
+    left: 40px;
     z-index: 100;
 }
 
