@@ -32,6 +32,7 @@ var smallWindow = false;
 if(window.innerWidth < 400)
     smallWindow = true;
 
+var restartClick = 0;
 
 class ScrollObject
 {
@@ -299,6 +300,13 @@ function interact()
         }
         
         console.log("knock!");
+    }
+
+    if(witchDone)
+    {
+        restartClick += 1;
+        if(restartClick == 2)
+            restart();
     }
 }
 
