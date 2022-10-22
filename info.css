@@ -21,6 +21,7 @@
     word-break: break-word;
 
     top: 50px;
+    max-width: 1000px;
 
     z-index: 101;
 
@@ -36,6 +37,11 @@
     text-align: center;
     display: block;
     width:60vw;
+    max-width: 600px;
+
+    border: 8px;
+    border-style:dashed;
+    border-color: aliceblue;
 }
 
 #img-container {
