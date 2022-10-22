@@ -121,9 +121,6 @@ const grimoireRaw = [
     {
         "name": "Chicory",
         "description": "a woody herbaceous plant with little pale flowers",
-        "altNames": [
-        ""
-        ],
         "bioName": "Cichorium intybus",
         "eatPoison": false,
         "touchPoison": false,
