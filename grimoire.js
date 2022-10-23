@@ -6,7 +6,7 @@ const grimoireRaw = [
         "bioName": "Aconitum Napellus",
         "eatPoison": true,
         "touchPoison": true,
-        "uses": [ "poison the tip of arrows", "aid a witch's flight" ]
+        "uses": [ "to poison the tip of arrows", "to aid a witch's flight" ]
     },
     {
         "name": "Allysum",
@@ -15,7 +15,7 @@ const grimoireRaw = [
         "bioName": "Alyssum maritima",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "appease anger", "cure madness", "cure hydrophobia" ]
+        "uses": [ "to appease anger", "to cure madness", "to cure hydrophobia" ]
     },
     {
         "name": "Angelica",
@@ -24,7 +24,7 @@ const grimoireRaw = [
         "bioName": "Archangelica",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "prevent infection by the plauge by chewing it", "guard against the spells of witches by carrying its root" ]
+        "uses": [ "to prevent infection by the plauge by chewing it", "to guard against the spells of witches by carrying its root" ]
     },
     {
         "name": "Ash Stick",
@@ -33,7 +33,7 @@ const grimoireRaw = [
         "bioName": "Fraxinus americana",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "ward off snakes, as drawing a circle around one with this can kill it in an instant", "herd cattle", "cure warts by sticking a pin into the ash, then into the wart until it hurts, and then back into the ash while saying aloud 'Ashen tree, ashen tree.  Pray buy this wart of me.'" ]
+        "uses": [ "to ward off snakes as drawing a circle around one with this can kill it in an instant", "to herd cattle", "to cure warts by sticking a pin into the ash, then into the wart until it hurts, and then back into the ash while saying aloud \"Ashen tree, ashen tree.  Pray buy this wart of me.\"" ]
     },
     {
         "name": "Mountain Ash",
@@ -42,7 +42,7 @@ const grimoireRaw = [
         "bioName": "Sorbus Acuparia",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "decorate the autumnal witches wreath", "protect a dwelling if planted near it", "make a Hallowe'en necklace with its colorful berries, which can be worn by pigs and cattle to protect them and fatten them up", "prevent rheumatism if kept in one's pocket", "treat fever and malaraia with its bark", "making dyes using any aspect of the plant", "avert charms to horses and cattle if used in a whip" ]
+        "uses": [ "as a decoration for the autumnal witches wreath", "to protect a dwelling if planted near it", "to make a Hallowe'en necklace with its colorful berries, which can be worn by pigs and cattle to protect them and fatten them up", "to prevent rheumatism if kept in one's pocket", "treat fever and malaraia with its bark", "for making dyes using any aspect of the plant", "to avert charms to horses and cattle if used in a whip" ]
     },
     {
         "name": "Aspen Tree",
@@ -50,7 +50,7 @@ const grimoireRaw = [
         "bioName": "Archangelica",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "can cure shaking ague (shivering fever) if you pin a lock of your hair to it", "prevent a witch from returning from the dead if laid on their grave" ]
+        "uses": [ "as a for cure shaking ague (shivering fever) if you pin a lock of your hair to it", "to prevent a witch from returning from the dead if laid on their grave" ]
     },
     {
         "name": "Lemon Balm",
@@ -58,7 +58,7 @@ const grimoireRaw = [
         "bioName": "Melissa officinalis",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "prolong life and preserve youth if drank daily as a tea", "help bees stick together if planted near their hives", "brew a calming potion for a bewitched person" ]
+        "uses": [ "to prolong life and preserve youth if drank daily as a tea", "to help bees stick together if planted near their hives", "to brew a calming potion for a bewitched person" ]
     },
     {
         "name": "Bay",
@@ -67,14 +67,14 @@ const grimoireRaw = [
         "bioName": "Laurus Nabilis",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "ward off all contagion, witchcraft, and evil spirits", "foretell of disaster if seen withered", "improve prophecies if chewed", "decorate Saturnalia festivities" ]
+        "uses": [ "to ward off all contagion, witchcraft, and evil spirits", "to foretell of disaster if seen withered", "to improve prophecies if chewed", "to decorate Saturnalia festivities" ]
     },
     {
         "name": "Beans",
         "description": "a pile of bean pods",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "ward off witches if you hold one in your mouth and spit it at the first witch that acosts you, concecrate the souls of the dead", "foretell of family tragedy if a bean turns up white in your crop" ]
+        "uses": [ "to ward off witches if you hold one in your mouth and spit it at the first witch that acosts you", "to concecrate the souls of the dead", "to foretell of family tragedy if a bean turns up white in your crop" ]
     },
     {
         "name": "Betony",
@@ -82,7 +82,7 @@ const grimoireRaw = [
         "bioName": "Betonica officinalis",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "add a color accent to midicine", "cure drunkeness if brewed as a tea", "protect against snakes if carried alongside Dracocephalum (False Dragonhead)" ]
+        "uses": [ "to add a color accent to a potion", "to cure drunkeness if brewed as a tea", "to protect against snakes if carried alongside Dracocephalum (False Dragonhead)" ]
     },
     {
         "name": "Blackberries",
@@ -91,7 +91,7 @@ const grimoireRaw = [
         "eatPoison": false,
         "touchPoison": false,
         "conditionalPoison": "if picked after the 10th of October, as that is the day that the Devil roams the country and spits on every bramble, causing the unsuspecting gatherer to become ill and die when eaten",
-        "uses": [ "cure many illnesses if humans or cattle pass under an arch of its brambles, though this often takes several passes through the arch to cure whooping cough", "prevent whooping cough if the bush's brambles are fashioned into a cross and worn" ]
+        "uses": [ "to cure many illnesses if humans or cattle pass under an arch of its brambles, though this often takes several passes through the arch to cure whooping cough", "as a ward for whooping cough if the bush's brambles are fashioned into a cross and worn" ]
     },
     {
         "name": "Broom",
@@ -100,14 +100,14 @@ const grimoireRaw = [
         "altNames": [ "Genista" ],
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "scourge yourself if you are a penitent (whip yourself for God's forgiveness)", "rid your home of its head of house, if used to sweep its floor when in blossom in May", "aid as an ingredient in medicines", "bring good luck and abundance if used as a decoration" ]
+        "uses": [ "to scourge yourself if you are a penitent (whip yourself for God's forgiveness)", "to rid your home of its head of house, if used to sweep its floor when in blossom in May", "as an ingredient in many potions", "to bring good luck and abundance if used as a decoration" ]
     },
     {
         "name": "Cabbage",
         "description": "a sphere of tightly wrapped leafy green vegetable",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "foretell of your future lover's shape on Hallowe'en by closing one's eyes, pulling on the stalk, and repeating 'Hally on a cabbage stalk, and hally on a bean. Hally on a cabbage stalk, tomorrow's Hallowe'en,' and studying the stalk once it's pulled from the ground" ]
+        "uses": [ "in one of many Hallowe'en rituals. One simply closes their eyes and pulls on the stalk while repeating \"Hally on a cabbage stalk, and hally on a bean. Hally on a cabbage stalk, tomorrow's Hallowe'en.\" Once the head gives away from the ground, they study the shape of its stalk to see the shape of their future lover." ]
     },
     {
         "name": "Caraway",
@@ -116,7 +116,7 @@ const grimoireRaw = [
         "bioName": "Carum Carvi",
         "eatPoison": false,
         "touchPoison": false,
-        "uses": [ "confer the quality of retention when eaten", "prevent theft", "bring back or prevent a lover from straying if one places a few seeds into their pocket", "lure a bird back to its nest when fed", "return a guest to the spot where one fed it to them" ]
+        "uses": [ "to confer the quality of retention when eaten", "to prevent theft", "to bring back or prevent a lover from straying if one places a few seeds into their pocket", "to lure a bird back to its nest when fed", "to return a guest to the spot where one fed it to them" ]
     },
     {
         "name": "Chicory",
@@ -126,9 +126,9 @@ const grimoireRaw = [
         "touchPoison": false,
         "conditionalPoison": "",
         "uses": [
-        "render a witch invisible to onlookers by holding their seeds",
-        "reduce swelling if ingested",
-        "aid in culinary recipes"
+        "to render a witch invisible to onlookers by holding their seeds",
+        "to reduce swelling if ingested",
+        "as an ingredient in many culinary recipes"
         ]
     },
     {
@@ -138,10 +138,10 @@ const grimoireRaw = [
         "eatPoison": false,
         "touchPoison": false,
         "uses": [
-        "detect witches and fairies",
-        "cure illness",
-        "avert the Evil Eye",
-        "protect its wearer from military service"
+        "to detect witches and fairies",
+        "to cure illness",
+        "to avert the \"Evil Eye\"",
+        "to protect its wearer from military service"
         ]
     },
     {
@@ -154,8 +154,8 @@ const grimoireRaw = [
         "eatPoison": false,
         "touchPoison": false,
         "uses": [
-        "represent the Christian Trinity",
-        "serve as a sacred protector"
+        "as a symbol of the Christian Trinity",
+        "to serve as a sacred protector"
         ]
     },
     {
@@ -170,9 +170,8 @@ const grimoireRaw = [
         "eatPoison": true,
         "touchPoison": false,
         "uses": [
-        "remedy gout if processed into colchicine",
-        "drug someone if fed in small doses",
-        "kill someone if given small doses over a long period of time "
+        "to remedy gout if processed into colchicine",
+        "to drug someone if fed in small doses, which can be fatal if done over a long period of time"
         ]
     },
     {
@@ -187,10 +186,10 @@ const grimoireRaw = [
         "touchPoison": false,
         "conditionalPoison": "stepped on by a pregnant person, as this can cause a miscarriage",
         "uses": [
-        "brew a love potion",
-        "treat diseases of the ears",
-        "act as an antidote to poison",
-        "bring drunkeness if added to wine"
+        "to brew a love potion",
+        "to treat diseases of the ears",
+        "as an antidote to poison",
+        "to bring drunkeness if added to wine"
         ]
     },
     {
@@ -200,11 +199,35 @@ const grimoireRaw = [
         "eatPoison": false,
         "touchPoison": false,
         "uses": [
-        "imbue the effect of mild sedation if added to a water or potion",
-        "protect against the power of witches",
-        "aid witches in various forms of destruction"
+        "to imbue the effect of mild sedation if added to a water or potion",
+        "as protection against the power of witches",
+        "as an aid to witches in various destructive spells"
         ]
-    }
+    },
+    {
+        "name": "Elder Tree",
+        "description": "a stick with hollow stems branching out in geometric patterns",
+        "altNames": [
+          "Eldrum",
+          "Hyldor",
+          "Hyllantree",
+          "Ellhorn",
+          "Bour Tree",
+          "Pipe Tree"
+        ],
+        "bioName": "Sambucus Nigra",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "to those who break it from a tree without performing the ritual for the Elder Mother who is said to live inside it.  One should partly bend their knee with bare head and folded arms, and recite \"Lady Ellhorn, give me some of thy wood and I will give thee some of mine when it grows in the forest.\"",
+        "uses": [
+          "as a pipe or blowing tool",
+          "as a whistle",
+          "to charm against lightning and snakes",
+          "to protect a body from evil spirits if buried with them",
+          "to point to witches if one sets an oil dipped tip on fire and places it in a glass of water on Christmas Eve"
+        ]
+      }
+    
 ];
 
 var itemPicked = null;
