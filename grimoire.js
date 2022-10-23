@@ -225,8 +225,23 @@ const grimoireRaw = [
           "to charm against lightning and snakes",
           "to protect a body from evil spirits if buried with them",
           "to point to witches if one sets an oil dipped tip on fire and places it in a glass of water on Christmas Eve"
+        ],
+      },
+      {
+        "name": "Elderberry",
+        "description": "a bunch of dark-blueish berries on hollow twigs",
+        "bioName": "Sambucus",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "",
+        "uses": [
+          "to make elderberry wine",
+          "as an adulterant for brewing port",
+          "as a cure for sciatica, influenza, erysipelas, and syphilis",
+          "as a spring tonic",
+          "as a dye"
         ]
-      }
+      }    
     
 ];
 
