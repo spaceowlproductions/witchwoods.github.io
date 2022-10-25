@@ -259,3 +259,50 @@ function pickupItem(itemNum)
     setupWitch(itemPicked);
     return "You find " + itemPicked.description + ", and place it in your basket to present to the witch in the woods.";
 }
+
+function recordItem()
+{
+    document.cookie = "flora" + "=" + itemPicked.name + ";path=/";
+
+    console.log(document.cookie);
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "cookie not found";
+  }
+  
+function checkCookie(cname) 
+{
+    let check = getCookie(cname);
+    if (username != "") {
+    return true;
+    } else {
+        return false;
+    }
+}
+
+function doesCookieExist(cname)
+{
+    var dc = document.cookie;
+    var prefix = cname + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) 
+            return false;
+        else
+            return true;
+    }
+}

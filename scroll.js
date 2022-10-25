@@ -269,6 +269,7 @@ function interact()
             {
                 document.getElementById("popupWindow").style.visibility = "hidden";
                 witchDone = true;
+                recordItem();
             }
 
             document.getElementById("popupInfo").textContent = newText;
