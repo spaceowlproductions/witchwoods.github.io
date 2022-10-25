@@ -241,8 +241,28 @@ const grimoireRaw = [
           "as a spring tonic",
           "as a dye"
         ]
-      }    
-    
+      },
+      {
+        "name": "Hawthorne",
+        "description": "a smooth grey thorny branch with small red pome fruit",
+        "altNames": [
+          "Mayblossoms",
+          "Whitehorn",
+          "Haw",
+          "Hagthorn",
+          "Quickset"
+        ],
+        "bioName": "Crataegus",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "rested under, as the Fairies might gain power over you",
+        "uses": [
+          "to protect against witches, spirits, and thunderstorms",
+          "to form the wreath of Green Man decorations",
+          "as a fire charm for kitchens if made into a globe",
+          "to foretell of future love by hanging it on a signpost on May Eve... if the branch is blown down by morning one will not marry"
+        ]
+      }
 ];
 
 var itemPicked = null;

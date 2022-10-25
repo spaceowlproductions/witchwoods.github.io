@@ -144,10 +144,12 @@ var Goodbye = function(witch)
 {
     this.witch = witch;
 
+    var rand = Math.ceil(getRandomArbitrary(0,goodByes.length-1));
+    var line = goodByes[rand];
     this.act = function()
     {
         this.next();
-        return "The witch looks at you as if they have nothing much left to say.  They shut the door leaving you with the quiet sounds of the surrounding wood. ";
+        return line;
     }
 
     this.next = function()
@@ -167,10 +169,19 @@ var Done = function(witch)
     }
 }
 
-
-
 var setupWitch = function(item)
 {
     witch = new witchState(item);
     console.log(witch);
 }
+
+const goodByes = [
+    "The witch looks at you as if they have nothing much left to say.  They shut the door leaving you with the quiet sounds of the surrounding wood. ",
+    "The witch hears something from within their hut and abruptly leaves you on their stoop.  You don't see anything through the crack in the door, or if you do you're not exactly sure what to make of the image. ",
+    "The witch looks up at the bright moon.  They start to mutter something but rather than speaking words their mouth emits the exact sound of a door shutting.  You're suddenly alone in front of the closed door of the hut. ",
+    "The witch suddenly vanishes.  Their foot no longer propping open the hut's door, it creaks shut. ",
+    "The witch looks over your shoulder, \"I must attend to my warding jars... You shouldn't be able to find this place so easily,\" they say as they move past you and into the woods, the door creaking shut behind them. ",
+    "The witch starts to hum an unfamiliar tune as they shut the door.  You swear you can hear the notes of their song reverberating throughout the surrounding wood. ",
+    "You hear a cat crying from inside the hut and the witch quickly retreats, the door shutting behind them.  Must be time for feeding. "
+];
+
