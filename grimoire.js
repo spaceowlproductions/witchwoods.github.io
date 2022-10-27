@@ -273,6 +273,7 @@ var personalGrimoire = [];
 
 if(doesCookieExist("grimoire"))
 {
+    console.log("grimoire cookie previously written");
     loadPersonalGrimoire();
 }
 
