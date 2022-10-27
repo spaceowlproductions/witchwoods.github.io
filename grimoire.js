@@ -269,6 +269,13 @@ var itemPicked = null;
 
 var selectedFlora = null;
 
+var personalGrimoire = [];
+
+if(doesCookieExist("grimoire"))
+{
+    loadPersonalGrimoire();
+}
+
 function pickupItem(itemNum)
 {
     if(selectedFlora == null)
@@ -282,9 +289,29 @@ function pickupItem(itemNum)
 
 function recordItem()
 {
-    document.cookie = "flora" + "=" + itemPicked.name + ";path=/";
+    personalGrimoire.push(itemPicked.name);
+    writeGrimoireCookie();
+    //document.cookie = "flora" + "=" + itemPicked.name + ";path=/";
+}
 
-    console.log(document.cookie);
+function writeGrimoireCookie()
+{
+    var cookieString = "grimoire=";
+
+    for(var i = 0; i < personalGrimoire.length; i++)
+    {
+        cookieString += personalGrimoire[i];
+
+        if(i < personalGrimoire.length - 1)
+        {
+            cookieString += ",";
+        }
+    }
+
+    cookieString += ";path=/";
+
+    document.cookie = cookieString;
+    console.log(cookieString);
 }
 
 function getCookie(cname) {
@@ -325,4 +352,16 @@ function doesCookieExist(cname)
         else
             return true;
     }
+}
+
+function loadPersonalGrimoire()
+{
+    console.log("loading personal grimoire from cookie");
+    var newGrimoire = getCookie("grimoire").split(",");
+
+    newGrimoire.forEach(flora => {
+        personalGrimoire.push(flora);
+    });
+
+    console.log("personal grimoire has " + personalGrimoire.length + " flora entires.");
 }
