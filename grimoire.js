@@ -366,3 +366,21 @@ function loadPersonalGrimoire()
 
     console.log("personal grimoire has " + personalGrimoire.length + " flora entires.");
 }
+
+function fillPersonalGrimoire()
+{
+    personalGrimoire.forEach(flora => {
+        const floraWindow = document.createElement("startWindow");
+        const header = document.createElement("h3");
+        const floraText = document.createElement("p");
+
+        let floraName = document.createTextNode (flora.name);
+        let info = document.createTextNode (floar.description);
+    
+        header.appendChild(floraName);
+        floraText.appendChild(info);
+
+        floraWindow.appendChild(header);
+        floraWindow.appendChild(floraText);
+    });
+}
