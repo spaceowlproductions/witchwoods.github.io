@@ -373,12 +373,19 @@ function fillPersonalGrimoire()
     const container = document.getElementById("container");
 
     personalGrimoire.forEach(flora => {
+        var floraObject = null;
+
+        grimoireRaw.forEach(obj => {
+            if(obj.name == flora)
+                floraObject = obj;
+        });
+
         const floraWindow = document.createElement("startWindow");
         const header = document.createElement("h3");
         const floraText = document.createElement("p");
 
-        let floraName = document.createTextNode(flora.name);
-        let info = document.createTextNode(flora.description);
+        let floraName = document.createTextNode(floraObject.name);
+        let info = document.createTextNode(floraObject.description);
         console.log(flora.name);
     
         header.appendChild(floraName);
