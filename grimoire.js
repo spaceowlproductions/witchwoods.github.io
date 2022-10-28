@@ -380,7 +380,8 @@ function fillPersonalGrimoire()
                 floraObject = obj;
         });
 
-        const floraWindow = document.createElement("startWindow");
+        const floraWindow = document.createElement("floraWindow");
+        floraWindow.setAttribute('id','floraWindow')
         const header = document.createElement("h3");
         const floraText = document.createElement("p");
 
