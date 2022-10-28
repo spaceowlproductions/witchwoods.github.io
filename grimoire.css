@@ -32,24 +32,26 @@
 
 }
 
-#adelma
+#floraWindow
 {
-    text-align: center;
-    display: block;
-    width:60vw;
-    max-width: 600px;
+    margin: 0 10%;
+    margin-bottom: -3px;
+    border: 3px solid rgb(36, 133, 91);
+    background-color: rgb(36, 133, 91, 0.3);
 
-    border: 8px;
-    border-style:dashed;
-    border-color: aliceblue;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    top: 50px;
+    max-width: 1000px;
+
+    z-index: 101;
+
+    font-family:Tahoma, sans-serif;
+
+    visibility: visible;
+
 }
-
-#img-container {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-}
-
 
 h3
 {
@@ -59,10 +61,18 @@ h3
     color: aliceblue;
 }
 
+h4
+{
+    text-overflow: normal;
+    padding: 0px 30px;
+    color: aliceblue;
+}
+
 p
 {
     text-overflow: normal;
-    padding: 20px 30px;
+    padding: 0 30px;
+    transform: translate(0, -20px);
     color: aliceblue;
 }
 

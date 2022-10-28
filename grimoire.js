@@ -124,7 +124,6 @@ const grimoireRaw = [
         "bioName": "Cichorium intybus",
         "eatPoison": false,
         "touchPoison": false,
-        "conditionalPoison": "",
         "uses": [
         "to render a witch invisible to onlookers by holding their seeds",
         "to reduce swelling if ingested",
@@ -184,7 +183,7 @@ const grimoireRaw = [
         "bioName": "Cyclamen purperescens",
         "eatPoison": false,
         "touchPoison": false,
-        "conditionalPoison": "stepped on by a pregnant person, as this can cause a miscarriage",
+        "conditionalPoison": "if stepped on by a pregnant person, as this can cause a miscarriage",
         "uses": [
         "to brew a love potion",
         "to treat diseases of the ears",
@@ -233,7 +232,6 @@ const grimoireRaw = [
         "bioName": "Sambucus",
         "eatPoison": false,
         "touchPoison": false,
-        "conditionalPoison": "",
         "uses": [
           "to make elderberry wine",
           "as an adulterant for brewing port",
@@ -255,7 +253,7 @@ const grimoireRaw = [
         "bioName": "Crataegus",
         "eatPoison": false,
         "touchPoison": false,
-        "conditionalPoison": "rested under, as the Fairies might gain power over you",
+        "conditionalPoison": "if rested under, as the Fairies might gain power over you",
         "uses": [
           "to protect against witches, spirits, and thunderstorms",
           "to form the wreath of Green Man decorations",
@@ -370,7 +368,7 @@ function loadPersonalGrimoire()
 function fillPersonalGrimoire()
 {
     //
-    const container = document.getElementById("container");
+    const container = document.getElementById('container');
 
     personalGrimoire.forEach(flora => {
         var floraObject = null;
@@ -380,20 +378,78 @@ function fillPersonalGrimoire()
                 floraObject = obj;
         });
 
-        const floraWindow = document.createElement("div");
+        const floraWindow = document.createElement('div');
         floraWindow.setAttribute('id','floraWindow')
-        const header = document.createElement("h3");
-        const floraText = document.createElement("p");
-
+        const title = document.createElement('h3');
         let floraName = document.createTextNode(floraObject.name);
-        let info = document.createTextNode(floraObject.description);
-        console.log(flora.name);
-    
-        header.appendChild(floraName);
-        floraText.appendChild(info);
 
         container.appendChild(floraWindow);
-        floraWindow.appendChild(header);
-        floraWindow.appendChild(floraText);
+        title.appendChild(floraName);
+        floraWindow.appendChild(title);
+
+        if(floraObject.bioName != null)
+        {
+            const titleTag = document.createElement('h4');
+            let titleText = document.createTextNode('Bionomial Name');
+            titleTag.appendChild(titleText);
+            floraWindow.appendChild(titleTag);
+
+            const infoTag = document.createElement('p');
+            let infoText = document.createTextNode(floraObject.bioName);
+            infoTag.appendChild(infoText);
+            floraWindow.appendChild(infoTag);
+        }
+
+        if(floraObject.altNames != null)
+        {
+            const titleTag = document.createElement('h4');
+            let titleText = document.createTextNode('Alternate Names');
+            titleTag.appendChild(titleText);
+            floraWindow.appendChild(titleTag);
+
+            const infoTag = document.createElement('p');
+            let infoText = document.createTextNode(floraObject.altNames);
+            infoTag.appendChild(infoText);
+            floraWindow.appendChild(infoTag);
+        }
+
+        if(floraObject.description != null)
+        {
+            const titleTag = document.createElement('h4');
+            let titleText = document.createTextNode('Description');
+            titleTag.appendChild(titleText);
+            floraWindow.appendChild(titleTag);
+
+            const infoTag = document.createElement('p');
+            let infoText = document.createTextNode(floraObject.description);
+            infoTag.appendChild(infoText);
+            floraWindow.appendChild(infoTag);
+        }
+
+        if(floraObject.eatPoison || floraObject.touchPoison || floraObject.conditionalPoison)
+        {
+            const titleTag = document.createElement('h4');
+            let titleText = document.createTextNode('Danger Warnings');
+            titleTag.appendChild(titleText);
+            floraWindow.appendChild(titleTag);
+
+            var warningText = "";
+            if(flora.eatPoison && !flora.touchPoison)
+                warningText = "It's poisonous to eat. ";
+            else if(!flora.eatPoison && flora.touchPoison)
+                warningText = "It's poisonous to the touch. ";
+            else
+                warningText = "It's poisonous to eat, and to touch. ";
+
+            if(floraObject.conditionalPoison)
+                warningText += "It can bring an ill fate " + floraObject.conditionalPoison;
+
+            const infoTag = document.createElement('p');
+            let infoText = document.createTextNode(warningText);
+            infoTag.appendChild(infoText);
+            floraWindow.appendChild(infoTag);
+    
+        }
+
     });
 }
