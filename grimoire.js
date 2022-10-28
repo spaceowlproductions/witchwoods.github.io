@@ -383,6 +383,6 @@ function fillPersonalGrimoire()
         floraWindow.appendChild(header);
         floraWindow.appendChild(floraText);
 
-        document.appendChild(floraWindow);
+        document.append(floraWindow);
     });
 }
