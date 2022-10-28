@@ -369,8 +369,9 @@ function loadPersonalGrimoire()
 
 function fillPersonalGrimoire()
 {
+    const container = document.getElementById("container");
+
     personalGrimoire.forEach(flora => {
-        const body = document.getElementsByTagName("body");
         const floraWindow = document.createElement("startWindow");
         const header = document.createElement("h3");
         const floraText = document.createElement("p");
@@ -381,7 +382,7 @@ function fillPersonalGrimoire()
         header.appendChild(floraName);
         floraText.appendChild(info);
 
-        body.appendChild(floraWindow);
+        container.appendChild(floraWindow);
         floraWindow.appendChild(header);
         floraWindow.appendChild(floraText);
     });
