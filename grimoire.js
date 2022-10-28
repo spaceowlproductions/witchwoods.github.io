@@ -367,7 +367,7 @@ function loadPersonalGrimoire()
 
 function fillPersonalGrimoire()
 {
-    //
+    
     const container = document.getElementById('container');
 
     personalGrimoire.forEach(flora => {
