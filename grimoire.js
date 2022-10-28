@@ -288,9 +288,17 @@ function pickupItem(itemNum)
 
 function recordItem()
 {
-    personalGrimoire.push(itemPicked.name);
-    writeGrimoireCookie();
-    //document.cookie = "flora" + "=" + itemPicked.name + ";path=/";
+    grimoireHasItem = false;
+    personalGrimoire.forEach(flora => {
+        if(flora == itemPicked.name)
+            grimoireHasItem = true;
+    });
+    
+    if(!grimoireHasItem)
+    {
+        personalGrimoire.push(itemPicked.name);
+        writeGrimoireCookie();    
+    }
 }
 
 function writeGrimoireCookie()
