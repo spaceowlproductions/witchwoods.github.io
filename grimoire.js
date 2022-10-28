@@ -375,7 +375,7 @@ function fillPersonalGrimoire()
         const floraText = document.createElement("p");
 
         let floraName = document.createTextNode (flora.name);
-        let info = document.createTextNode (floar.description);
+        let info = document.createTextNode (flora.description);
     
         header.appendChild(floraName);
         floraText.appendChild(info);
