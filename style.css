@@ -200,11 +200,25 @@
     font-size: clamp(20px, 5vw, 30px);
 }
 
+#grimoireButton
+{
+    display: inline-block;
+    margin-right: 20px;
+    z-index: 100;
+    color: rgb(36, 133, 91);
+    font-size: clamp(20px, 5vw, 30px);
+}
+
+
 #infoButton:hover
 {
     cursor: pointer;
 }
 
+#grimoireButton:hover
+{
+    cursor: pointer;
+}
 
 #refresh:hover
 {

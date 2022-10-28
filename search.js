@@ -90,3 +90,10 @@ function infoWindow()
 {
   window.open("info.html", "_blank");
 }
+
+document.getElementById("grimoireButton").addEventListener("click", openGrimoire)
+
+function openGrimoire()
+{
+  window.open("grimoire.html", "_blank");
+}
