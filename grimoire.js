@@ -414,8 +414,7 @@ function fillPersonalGrimoire()
 
             const infoTag = document.createElement('p');
             var text = floraObject.altNames;
-            text = text.replace(',', ', ');
-            let infoText = document.createTextNode(text);
+            let infoText = document.createTextNode(text.replace(',', ', '));
             infoTag.appendChild(infoText);
             floraWindow.appendChild(infoTag);
         }
@@ -442,8 +441,7 @@ function fillPersonalGrimoire()
 
             const infoTag = document.createElement('p');
             var text = floraObject.uses;
-            text = text.replace(',', ', ');
-            let infoText = document.createTextNode(text);
+            let infoText = document.createTextNode(text.replace(',', ', '));
             infoTag.appendChild(infoText);
             floraWindow.appendChild(infoTag);
         }
