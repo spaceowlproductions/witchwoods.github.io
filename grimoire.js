@@ -426,6 +426,19 @@ function fillPersonalGrimoire()
             floraWindow.appendChild(infoTag);
         }
 
+        if(floraObject.uses != null)
+        {
+            const titleTag = document.createElement('h4');
+            let titleText = document.createTextNode('Uses');
+            titleTag.appendChild(titleText);
+            floraWindow.appendChild(titleTag);
+
+            const infoTag = document.createElement('p');
+            let infoText = document.createTextNode(floraObject.uses);
+            infoTag.appendChild(infoText);
+            floraWindow.appendChild(infoTag);
+        }
+
         if(floraObject.eatPoison || floraObject.touchPoison || floraObject.conditionalPoison)
         {
             const titleTag = document.createElement('h4');
