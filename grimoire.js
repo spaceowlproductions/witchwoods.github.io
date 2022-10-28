@@ -375,9 +375,6 @@ function loadPersonalGrimoire()
 
 function fillPersonalGrimoire()
 {
-    //
-    const container = document.getElementById('container');
-
     personalGrimoire.forEach(flora => {
         var floraObject = null;
 
@@ -391,7 +388,7 @@ function fillPersonalGrimoire()
         const title = document.createElement('h3');
         let floraName = document.createTextNode(floraObject.name);
 
-        container.appendChild(floraWindow);
+        document.body.appendChild(floraWindow);
         title.appendChild(floraName);
         floraWindow.appendChild(title);
 
