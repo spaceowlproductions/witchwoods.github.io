@@ -333,15 +333,8 @@ document.addEventListener('keyup', function(event)
     }
 });
 
-var lastY = 5000;
-document.addEventListener("touchmove", function(e) {
-    if(e.touches[0].clientY < lastY)
-    {
-        tryScroll();
-    }
-    else
-        scrolling = false;
-    lastY = e.touches[0].clientY;
+document.addEventListener("touchstart", function(e) {
+    tryScroll
   });  
 
 
