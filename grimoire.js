@@ -319,7 +319,7 @@ function writeGrimoireCookie()
 
     document.cookie = cookieString;
     console.log(cookieString);
-}
+}  
 
 function getCookie(cname) {
     let name = cname + "=";

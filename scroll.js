@@ -334,7 +334,7 @@ document.addEventListener('keyup', function(event)
 });
 
 document.addEventListener("touchstart", function(e) {
-    tryScroll
+    tryScroll();
   });  
 
 
