@@ -297,11 +297,11 @@ function recordItem()
     if(!grimoireHasItem)
     {
         personalGrimoire.push(itemPicked.name);
-        writeGrimoireCookie();    
+        writeGrimoireCookie(7300);    
     }
 }
 
-function writeGrimoireCookie()
+function writeGrimoireCookie(exdays)
 {
     var cookieString = "grimoire=";
 
@@ -315,7 +315,12 @@ function writeGrimoireCookie()
         }
     }
 
-    cookieString += ";path=/";
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+  
+
+    cookieString += ";" + expires + ";path=/";
 
     document.cookie = cookieString;
     console.log(cookieString);
