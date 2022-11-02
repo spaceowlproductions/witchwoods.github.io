@@ -129,14 +129,7 @@ class ScrollObject
         const image = document.getElementById("trees" + this.index);
         const posElement =  document.getElementById("center" + this.index);
 
-        var lst = Date.now();
-        var rps = 2*Math.PI;
-        var step = rps/60;
-        var dif = Date.now() - lst;
-
-        step = rps * dif/1000;
-
-        stepTime += step;
+        stepTime++;
         if(stepTime > 200)
         {
             var stepAudio = new Audio(steps[stepNum]);
