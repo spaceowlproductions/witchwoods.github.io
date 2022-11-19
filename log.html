@@ -94,6 +94,8 @@
             pre.textContent = '\n' + JSON.stringify(floraAdditions, "\t", 2);
 
             document.cookie = "logData=" + JSON.stringify(floraAdditions, "\t", 2);
+
+            saveDynamicDataToFile(floraAdditions);
         }
         document.addEventListener('DOMContentLoaded', ()=>
         {
@@ -106,6 +108,14 @@
             formText = formText.replaceAll(' ,', ',');
             return formText.split(',');
         }
+
+        function saveDynamicDataToFile(textToSave) {
+            var userInput = textToSave;
+			
+            var blob = new Blob([userInput], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "grimoireData.txt");
+        }
+
 
     </script>
 
