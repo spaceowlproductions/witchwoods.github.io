@@ -96,7 +96,7 @@
 
             document.cookie = "logData=" + JSON.stringify(floraAdditions, "\t", 2);
 
-            saveDynamicDataToFile(floraAdditions);
+            saveDynamicDataToFile(JSON.stringify(floraAdditions, "\t", 2));
         }
         document.addEventListener('DOMContentLoaded', ()=>
         {
