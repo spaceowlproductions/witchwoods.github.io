@@ -260,6 +260,86 @@ const grimoireRaw = [
           "as a fire charm for kitchens if made into a globe",
           "to foretell of future love by hanging it on a signpost on May Eve... if the branch is blown down by morning one will not marry"
         ]
+      },
+      {
+        "name": "Hazel",
+        "description": "a stem of rounded leaves with double-serrate margins, with clumps of small brown nuts",
+        "altNames": [
+          "Cobnut",
+          "Filbert"
+        ],
+        "bioName": "Genus Corylus",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to make a most effective divining rod for finding water and to drive cattle through the purifying fires of midsummer",
+          "as a protection from dark magic if used to craft a horse's saddle",
+          "to bless you with your hearts desire if warn in your hair",
+          "to predict a future love on Halloween if you place a berry in a fire and the berry jumps just after you whisper the name of a potential suitor"
+        ]
+      },
+      {
+        "name": "Hellebore",
+        "description": "a flower with five petal-like sepals surrounding a ring of small, cup-like nectaries",
+        "altNames": [
+          "Christe Herbe",
+          "Christmas Rose",
+          "Melampode"
+        ],
+        "bioName": "Helleborus Niger",
+        "eatPoison": true,
+        "touchPoison": true,
+        "uses": [
+          "to protect cattle from dark magic if prepared with the proper rites",
+          "to grant a witch invisibility if powdered and scattered through the air",
+          "to cure a poisoned beast by drawing it through a whole in its ear and removing it the next day at the same hour "
+        ]
+      },
+      {
+        "name": "Hemlock",
+        "description": "a tall, handsome, and smooth stem with umbrellas of white flowers which give off a potent stench",
+        "bioName": "Conium Maculatum",
+        "eatPoison": true,
+        "touchPoison": true,
+        "uses": [
+          "as a most fatal poison to anyone who drink but just a few drops",
+          "to brew a drug that cures vertigo if administered with extreme caution"
+        ]
+      },
+      {
+        "name": "Henbane",
+        "description": "an unpleasantly slimy, hairy weed with coarsely-toothed leaves and yellowish bell-shaped flowers with purple veins",
+        "bioName": "Hyoscyamus Niger",
+        "eatPoison": true,
+        "touchPoison": false,
+        "uses": [
+          "to brew a dark magic potion that can send its drinker into delirium and convulsions",
+          "to crown the dead as they wander the river Styx",
+          "to cure gout and aches if prepared carefully as an ointment"
+        ]
+      },
+      {
+        "name": "Holly",
+        "description": "a sprig of hardy green leaves surrounding bright red berry-like drupes",
+        "bioName": "Ilex",
+        "eatPoison": true,
+        "touchPoison": false,
+        "uses": [
+          "to protect and strengthen livestock if blessed in a church and hung in a stable",
+          "as a ward against storms and disaster if grown outside of ones dwelling"
+        ]
+      },
+      {
+        "name": "Horehound",
+        "description": "a sprig of mint-like hairy grey leaves with small white flowers",
+        "bioName": "Marrubium vulgare",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "as a cure for hydrophobia induced by rabies",
+          "as a deworming agent for livestock and pets",
+          "to brew potions and tonics with respiratory benefits"
+        ]
       }
 ];
 
