@@ -292,7 +292,7 @@ const grimoireRaw = [
         "uses": [
           "to protect cattle from dark magic if prepared with the proper rites",
           "to grant a witch invisibility if powdered and scattered through the air",
-          "to cure a poisoned beast by drawing it through a whole in its ear and removing it the next day at the same hour "
+          "to cure a poisoned beast by drawing it through a hole in its ear and removing it the next day at the same hour "
         ]
       },
       {
