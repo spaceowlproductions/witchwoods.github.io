@@ -241,6 +241,41 @@ const grimoireRaw = [
         ]
       },
       {
+        "name": "Flax",
+        "description": "a slender branching stem with green lanceolate leaves and pure blue flowers",
+        "bioName": "Linum usitatissimum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to cure ailing children if exposed to them overnight",
+          "to spin and weave into protective linen",
+          "to protect a bride if included used in marriage rituals",
+          "to make a seven-year old child beautiful if they dance in a field of it"
+        ]
+      },
+      {
+        "name": "Foxglove",
+        "description": "a slender branching stem with green lanceolate leaves and pure blue flowers",
+        "altNames": [
+          "Witches Gloves",
+          "Dead Men’s Bells",
+          "Fairy’s Glove",
+          "Bloody Fingers",
+          "Fairy Thimbles",
+          "Folkesglove",
+          "Foxglove",
+          "Fox Bell",
+          "Our Lady’s Gloves"    
+        ],
+        "bioName": "Digitalis purpurea",
+        "eatPoison": true,
+        "touchPoison": true,
+        "uses": [
+          "to cause the heart a sensation of flying if ingested",
+          "to aid a witch in flying"
+        ]
+      },    
+      {
         "name": "Hawthorne",
         "description": "a smooth grey thorny branch with small red pome fruit",
         "altNames": [
