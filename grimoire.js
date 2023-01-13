@@ -375,6 +375,49 @@ const grimoireRaw = [
           "as a deworming agent for livestock and pets",
           "to brew potions and tonics with respiratory benefits"
         ]
+      },
+      {
+        "name": "Juniper",
+        "description": "branches of green spiky leaves with berry-like black seed cones",
+        "bioName": "Juniperus",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to fumigate sick rooms",
+          "to smoke out any unpleasant creatures or spirits from a house",
+          "to ward off evil spirits if planted near an entrance"
+        ]
+      },
+      {
+        "name": "Mandrake",
+        "description": "a man-shaped root topped with a sprout of leaves and large yellow-green flowers",
+        "altNames": [
+          "sleep drug"
+        ],
+        "bioName": "Mandragora Officinarum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "uprooted without proper protection from its deadly shrieks",
+        "uses": [
+          "to induce a deep and almost death-like trance",
+          "as an aphrodisiac in potions to promote love or cure sterility"
+        ]
+      },
+      {
+        "name": "Mullein",
+        "description": "a dense rosette of lower leaves surrounding a tall stem of flowers with five symmetrical petals",
+        "altNames": [
+          "Hag's Taper",
+          "the Candlewick Plant",
+          "Great Mullein"
+        ],
+        "bioName": "Verbascum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "as a candle (taper) to light ones way if dipped in oil",
+          "to make wicks and tinder with its leaves"
+        ]
       }
 ];
 
