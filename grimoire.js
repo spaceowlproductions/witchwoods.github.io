@@ -418,7 +418,91 @@ const grimoireRaw = [
           "as a candle (taper) to light ones way if dipped in oil",
           "to make wicks and tinder with its leaves"
         ]
+      },
+      {
+        "name": "Mugwort",
+        "description": "a dark reddish-purple stem full of pinate pointed leaves",
+        "altNames": [
+          "St. John's Herb",
+          "the Plant of the Weary Traveler"
+        ],
+        "bioName": "Artemisia Vulgaris",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to protect a weary traveler if placed in their shoe",
+          "to protect against sunstroke",
+          "to repel unwanted insects if prepared as an oil",
+          "to ward off possession by evil spirits if singed with fire and prepared with the proper words",
+          "to remedy the ague"
+        ]
+      },
+      {
+        "name": "Oak",
+        "description": "a deciduous tree branch with deeply lobed leaves and acorns",
+        "bioName": "Quercus",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to brew a potion that cures Gout",
+          "to create a protective bouquet or wreath if paired with yew"
+        ]
+      },
+      {
+        "name": "Onion",
+        "description": "a fleshy bulb topped with tall green stalks",
+        "bioName": "Allium cepa",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to draw in all evil smells and rid the air of infections"
+        ]
+      },
+      {
+        "name": "Garlic",
+        "description": "a tall flat bladed leaf growing from a small fleshy bulb",
+        "bioName": "Allium sativum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to rid the air of infection",
+          "to ward off vampires"
+        ]
+      },
+      {
+        "name": "Leeks",
+        "description": "a large bundle of leaf sheaths",
+        "bioName": "Allium ampeloprasum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "to avert the evil eye and prevent bewitching"
+        ]
+      },
+      {
+        "name": "Parsley",
+        "description": "a rosette full of tiny green tripinnate leaves",
+        "bioName": "Petroselinum crispum",
+        "eatPoison": false,
+        "touchPoison": false,
+        "conditionalPoison": "if sewn during a time without a rising moon",
+        "uses": [
+          "as an herb for kitchen magic",
+          "as a symbol of festivity"
+        ]
+      },
+      {
+        "name": "Pennyroyal",
+        "description": "a tall stem with squared cross-sections divided by leaves in opposite pairs",
+        "bioName": "Mentha pulegium",
+        "eatPoison": false,
+        "touchPoison": false,
+        "uses": [
+          "as one of many elements in a witches garland",
+          "to induce abortions if used in quantity"
+        ]
       }
+    
 ];
 
 var itemPicked = null;
